@@ -1,4 +1,0 @@
-{
- "recordsEndpoint": "https://script.google.com/macros/s/AKfycbwMhs5EitRaSsjl2T8QQ6igLgqrVXqbw0OCdaR9rYaZGyytWKEn0D0TBhDKuNtAHYe24Q/exec",
- "_help": "Web app URL (\u2026/exec) of the Apps Script 'ABA Dashboard Feed'. Clicks on the report call it to open the matching records in the 'ABA Bot Records' sheet."
-}
