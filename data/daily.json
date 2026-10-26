@@ -1,0 +1,2090 @@
+[
+{
+"date": "2025-12-08",
+"requested": 61,
+"successful": 54,
+"failed": 7,
+"data_issue": 51,
+"actual_failure": -44
+},
+{
+"date": "2025-12-09",
+"requested": 203,
+"successful": 152,
+"failed": 51,
+"data_issue": 0,
+"actual_failure": 51
+},
+{
+"date": "2025-12-10",
+"requested": 435,
+"successful": 346,
+"failed": 89,
+"data_issue": 6,
+"actual_failure": 83
+},
+{
+"date": "2025-12-11",
+"requested": 114,
+"successful": 99,
+"failed": 15,
+"data_issue": 0,
+"actual_failure": 15
+},
+{
+"date": "2025-12-12",
+"requested": 204,
+"successful": 149,
+"failed": 55,
+"data_issue": 0,
+"actual_failure": 55
+},
+{
+"date": "2025-12-13",
+"requested": 4,
+"successful": 3,
+"failed": 1,
+"data_issue": 0,
+"actual_failure": 1
+},
+{
+"date": "2025-12-14",
+"requested": 4,
+"successful": 4,
+"failed": 0,
+"data_issue": 5,
+"actual_failure": -5
+},
+{
+"date": "2025-12-15",
+"requested": 291,
+"successful": 282,
+"failed": 9,
+"data_issue": 11,
+"actual_failure": -2
+},
+{
+"date": "2025-12-16",
+"requested": 142,
+"successful": 126,
+"failed": 16,
+"data_issue": 4,
+"actual_failure": 12
+},
+{
+"date": "2025-12-17",
+"requested": 256,
+"successful": 190,
+"failed": 66,
+"data_issue": 5,
+"actual_failure": 61
+},
+{
+"date": "2025-12-18",
+"requested": 63,
+"successful": 57,
+"failed": 6,
+"data_issue": 6,
+"actual_failure": 0
+},
+{
+"date": "2025-12-19",
+"requested": 91,
+"successful": 58,
+"failed": 33,
+"data_issue": 1,
+"actual_failure": 32
+},
+{
+"date": "2025-12-20",
+"requested": 1,
+"successful": 0,
+"failed": 1,
+"data_issue": 0,
+"actual_failure": 1
+},
+{
+"date": "2025-12-21",
+"requested": 1,
+"successful": 1,
+"failed": 0,
+"data_issue": 4,
+"actual_failure": 6
+},
+{
+"date": "2025-12-22",
+"requested": 286,
+"successful": 276,
+"failed": 10,
+"data_issue": 3,
+"actual_failure": 2
+},
+{
+"date": "2025-12-23",
+"requested": 59,
+"successful": 54,
+"failed": 5,
+"data_issue": 1,
+"actual_failure": 4
+},
+{
+"date": "2025-12-24",
+"requested": 27,
+"successful": 22,
+"failed": 5,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2025-12-25",
+"requested": 5,
+"successful": 5,
+"failed": 0,
+"data_issue": 1,
+"actual_failure": 1
+},
+{
+"date": "2025-12-26",
+"requested": 29,
+"successful": 27,
+"failed": 2,
+"data_issue": 2,
+"actual_failure": 0
+},
+{
+"date": "2025-12-29",
+"requested": 49,
+"successful": 47,
+"failed": 2,
+"data_issue": 3,
+"actual_failure": 1
+},
+{
+"date": "2025-12-30",
+"requested": 48,
+"successful": 44,
+"failed": 4,
+"data_issue": 3,
+"actual_failure": 1
+},
+{
+"date": "2025-12-31",
+"requested": 139,
+"successful": 135,
+"failed": 4,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-01-01",
+"requested": 14,
+"successful": 14,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 1
+},
+{
+"date": "2026-01-02",
+"requested": 55,
+"successful": 54,
+"failed": 1,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-01-03",
+"requested": 2,
+"successful": 2,
+"failed": 0,
+"data_issue": 3,
+"actual_failure": 1
+},
+{
+"date": "2026-01-05",
+"requested": 285,
+"successful": 281,
+"failed": 4,
+"data_issue": 6,
+"actual_failure": 3
+},
+{
+"date": "2026-01-06",
+"requested": 151,
+"successful": 142,
+"failed": 9,
+"data_issue": 0,
+"actual_failure": 6
+},
+{
+"date": "2026-01-07",
+"requested": 213,
+"successful": 207,
+"failed": 6,
+"data_issue": 5,
+"actual_failure": 14
+},
+{
+"date": "2026-01-08",
+"requested": 280,
+"successful": 261,
+"failed": 19,
+"data_issue": 1,
+"actual_failure": 4
+},
+{
+"date": "2026-01-09",
+"requested": 114,
+"successful": 109,
+"failed": 5,
+"data_issue": 6,
+"actual_failure": 12
+},
+{
+"date": "2026-01-12",
+"requested": 355,
+"successful": 337,
+"failed": 18,
+"data_issue": 5,
+"actual_failure": 0
+},
+{
+"date": "2026-01-13",
+"requested": 35,
+"successful": 30,
+"failed": 5,
+"data_issue": 1,
+"actual_failure": 2
+},
+{
+"date": "2026-01-14",
+"requested": 191,
+"successful": 188,
+"failed": 3,
+"data_issue": 10,
+"actual_failure": 25
+},
+{
+"date": "2026-01-15",
+"requested": 197,
+"successful": 162,
+"failed": 35,
+"data_issue": 7,
+"actual_failure": 18
+},
+{
+"date": "2026-01-16",
+"requested": 126,
+"successful": 101,
+"failed": 25,
+"data_issue": 1,
+"actual_failure": 0
+},
+{
+"date": "2026-01-17",
+"requested": 1,
+"successful": 0,
+"failed": 1,
+"data_issue": 1,
+"actual_failure": 0
+},
+{
+"date": "2026-01-19",
+"requested": 56,
+"successful": 55,
+"failed": 1,
+"data_issue": 4,
+"actual_failure": 4
+},
+{
+"date": "2026-01-20",
+"requested": 136,
+"successful": 128,
+"failed": 8,
+"data_issue": 8,
+"actual_failure": 14
+},
+{
+"date": "2026-01-21",
+"requested": 194,
+"successful": 172,
+"failed": 22,
+"data_issue": 6,
+"actual_failure": 15
+},
+{
+"date": "2026-01-22",
+"requested": 69,
+"successful": 48,
+"failed": 21,
+"data_issue": 5,
+"actual_failure": 4
+},
+{
+"date": "2026-01-23",
+"requested": 373,
+"successful": 364,
+"failed": 9,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-01-24",
+"requested": 4,
+"successful": 4,
+"failed": 0,
+"data_issue": 1,
+"actual_failure": 0
+},
+{
+"date": "2026-01-26",
+"requested": 74,
+"successful": 73,
+"failed": 1,
+"data_issue": 6,
+"actual_failure": 0
+},
+{
+"date": "2026-01-27",
+"requested": 153,
+"successful": 147,
+"failed": 6,
+"data_issue": 1,
+"actual_failure": 2
+},
+{
+"date": "2026-01-28",
+"requested": 60,
+"successful": 57,
+"failed": 3,
+"data_issue": 10,
+"actual_failure": 8
+},
+{
+"date": "2026-01-29",
+"requested": 134,
+"successful": 116,
+"failed": 18,
+"data_issue": 8,
+"actual_failure": 6
+},
+{
+"date": "2026-01-30",
+"requested": 53,
+"successful": 39,
+"failed": 14,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-01-31",
+"requested": 1,
+"successful": 1,
+"failed": 0,
+"data_issue": 1,
+"actual_failure": 1
+},
+{
+"date": "2026-02-02",
+"requested": 36,
+"successful": 34,
+"failed": 2,
+"data_issue": 1,
+"actual_failure": 1
+},
+{
+"date": "2026-02-03",
+"requested": 76,
+"successful": 74,
+"failed": 2,
+"data_issue": 1,
+"actual_failure": 2
+},
+{
+"date": "2026-02-04",
+"requested": 67,
+"successful": 64,
+"failed": 3,
+"data_issue": 8,
+"actual_failure": 9
+},
+{
+"date": "2026-02-05",
+"requested": 273,
+"successful": 256,
+"failed": 17,
+"data_issue": 108,
+"actual_failure": 11
+},
+{
+"date": "2026-02-06",
+"requested": 381,
+"successful": 262,
+"failed": 119,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-02-07",
+"requested": 1,
+"successful": 1,
+"failed": 0,
+"data_issue": 11,
+"actual_failure": 27
+},
+{
+"date": "2026-02-09",
+"requested": 357,
+"successful": 319,
+"failed": 38,
+"data_issue": 9,
+"actual_failure": 12
+},
+{
+"date": "2026-02-10",
+"requested": 317,
+"successful": 296,
+"failed": 21,
+"data_issue": 3,
+"actual_failure": 12
+},
+{
+"date": "2026-02-11",
+"requested": 103,
+"successful": 88,
+"failed": 15,
+"data_issue": 3,
+"actual_failure": 4
+},
+{
+"date": "2026-02-12",
+"requested": 59,
+"successful": 52,
+"failed": 7,
+"data_issue": 1,
+"actual_failure": 20
+},
+{
+"date": "2026-02-13",
+"requested": 391,
+"successful": 370,
+"failed": 21,
+"data_issue": 2,
+"actual_failure": 3
+},
+{
+"date": "2026-02-14",
+"requested": 20,
+"successful": 15,
+"failed": 5,
+"data_issue": 0,
+"actual_failure": 14
+},
+{
+"date": "2026-02-16",
+"requested": 106,
+"successful": 92,
+"failed": 14,
+"data_issue": 0,
+"actual_failure": 12
+},
+{
+"date": "2026-02-17",
+"requested": 114,
+"successful": 102,
+"failed": 12,
+"data_issue": 1,
+"actual_failure": 1
+},
+{
+"date": "2026-02-18",
+"requested": 111,
+"successful": 109,
+"failed": 2,
+"data_issue": 4,
+"actual_failure": 14
+},
+{
+"date": "2026-02-19",
+"requested": 110,
+"successful": 92,
+"failed": 18,
+"data_issue": 0,
+"actual_failure": 7
+},
+{
+"date": "2026-02-20",
+"requested": 107,
+"successful": 100,
+"failed": 7,
+"data_issue": 0,
+"actual_failure": 2
+},
+{
+"date": "2026-02-21",
+"requested": 13,
+"successful": 11,
+"failed": 2,
+"data_issue": 2,
+"actual_failure": 2
+},
+{
+"date": "2026-02-23",
+"requested": 57,
+"successful": 53,
+"failed": 4,
+"data_issue": 3,
+"actual_failure": 1
+},
+{
+"date": "2026-02-24",
+"requested": 143,
+"successful": 139,
+"failed": 4,
+"data_issue": 24,
+"actual_failure": 4
+},
+{
+"date": "2026-02-25",
+"requested": 143,
+"successful": 115,
+"failed": 28,
+"data_issue": 2,
+"actual_failure": 2
+},
+{
+"date": "2026-02-26",
+"requested": 84,
+"successful": 80,
+"failed": 4,
+"data_issue": 122,
+"actual_failure": 6
+},
+{
+"date": "2026-02-27",
+"requested": 1087,
+"successful": 932,
+"failed": 155,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-02-28",
+"requested": 2,
+"successful": 2,
+"failed": 0,
+"data_issue": 198,
+"actual_failure": 5
+},
+{
+"date": "2026-03-02",
+"requested": 1398,
+"successful": 1195,
+"failed": 203,
+"data_issue": 2,
+"actual_failure": 5
+},
+{
+"date": "2026-03-03",
+"requested": 115,
+"successful": 108,
+"failed": 7,
+"data_issue": 5,
+"actual_failure": 3
+},
+{
+"date": "2026-03-04",
+"requested": 106,
+"successful": 98,
+"failed": 8,
+"data_issue": 6,
+"actual_failure": 33
+},
+{
+"date": "2026-03-05",
+"requested": 141,
+"successful": 102,
+"failed": 39,
+"data_issue": 258,
+"actual_failure": 121
+},
+{
+"date": "2026-03-06",
+"requested": 588,
+"successful": 209,
+"failed": 379,
+"data_issue": 8,
+"actual_failure": 50
+},
+{
+"date": "2026-03-07",
+"requested": 198,
+"successful": 140,
+"failed": 58,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-03-08",
+"requested": 4,
+"successful": 4,
+"failed": 0,
+"data_issue": 59,
+"actual_failure": 122
+},
+{
+"date": "2026-03-09",
+"requested": 675,
+"successful": 494,
+"failed": 181,
+"data_issue": 168,
+"actual_failure": 1
+},
+{
+"date": "2026-03-10",
+"requested": 295,
+"successful": 126,
+"failed": 169,
+"data_issue": 43,
+"actual_failure": 187
+},
+{
+"date": "2026-03-11",
+"requested": 306,
+"successful": 76,
+"failed": 230,
+"data_issue": 36,
+"actual_failure": 0
+},
+{
+"date": "2026-03-12",
+"requested": 38,
+"successful": 2,
+"failed": 36,
+"data_issue": 250,
+"actual_failure": 0
+},
+{
+"date": "2026-03-13",
+"requested": 255,
+"successful": 5,
+"failed": 250,
+"data_issue": 191,
+"actual_failure": 19
+},
+{
+"date": "2026-03-15",
+"requested": 953,
+"successful": 743,
+"failed": 210,
+"data_issue": 123,
+"actual_failure": 11
+},
+{
+"date": "2026-03-16",
+"requested": 600,
+"successful": 466,
+"failed": 134,
+"data_issue": 18,
+"actual_failure": 2
+},
+{
+"date": "2026-03-17",
+"requested": 167,
+"successful": 147,
+"failed": 20,
+"data_issue": 5,
+"actual_failure": 12
+},
+{
+"date": "2026-03-18",
+"requested": 296,
+"successful": 279,
+"failed": 17,
+"data_issue": 5,
+"actual_failure": 0
+},
+{
+"date": "2026-03-19",
+"requested": 29,
+"successful": 24,
+"failed": 5,
+"data_issue": 260,
+"actual_failure": 27
+},
+{
+"date": "2026-03-20",
+"requested": 771,
+"successful": 484,
+"failed": 287,
+"data_issue": 0,
+"actual_failure": 1
+},
+{
+"date": "2026-03-21",
+"requested": 2,
+"successful": 1,
+"failed": 1,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-03-22",
+"requested": 2,
+"successful": 2,
+"failed": 0,
+"data_issue": 91,
+"actual_failure": 24
+},
+{
+"date": "2026-03-23",
+"requested": 278,
+"successful": 163,
+"failed": 115,
+"data_issue": 257,
+"actual_failure": 17
+},
+{
+"date": "2026-03-24",
+"requested": 1048,
+"successful": 774,
+"failed": 274,
+"data_issue": 3,
+"actual_failure": 0
+},
+{
+"date": "2026-03-25",
+"requested": 48,
+"successful": 45,
+"failed": 3,
+"data_issue": 100,
+"actual_failure": 83
+},
+{
+"date": "2026-03-26",
+"requested": 678,
+"successful": 495,
+"failed": 183,
+"data_issue": 2,
+"actual_failure": 1
+},
+{
+"date": "2026-03-27",
+"requested": 52,
+"successful": 49,
+"failed": 3,
+"data_issue": 588,
+"actual_failure": 6
+},
+{
+"date": "2026-03-28",
+"requested": 1009,
+"successful": 415,
+"failed": 594,
+"data_issue": 7,
+"actual_failure": 1
+},
+{
+"date": "2026-03-30",
+"requested": 78,
+"successful": 70,
+"failed": 8,
+"data_issue": 174,
+"actual_failure": 24
+},
+{
+"date": "2026-03-31",
+"requested": 504,
+"successful": 306,
+"failed": 198,
+"data_issue": 63,
+"actual_failure": 80
+},
+{
+"date": "2026-04-01",
+"requested": 813,
+"successful": 670,
+"failed": 143,
+"data_issue": 2,
+"actual_failure": 1
+},
+{
+"date": "2026-04-02",
+"requested": 67,
+"successful": 64,
+"failed": 3,
+"data_issue": 5,
+"actual_failure": 2
+},
+{
+"date": "2026-04-03",
+"requested": 163,
+"successful": 156,
+"failed": 7,
+"data_issue": 1,
+"actual_failure": 0
+},
+{
+"date": "2026-04-04",
+"requested": 7,
+"successful": 6,
+"failed": 1,
+"data_issue": 16,
+"actual_failure": 11
+},
+{
+"date": "2026-04-06",
+"requested": 715,
+"successful": 564,
+"failed": 27,
+"data_issue": 6,
+"actual_failure": 2
+},
+{
+"date": "2026-04-07",
+"requested": 176,
+"successful": 167,
+"failed": 8,
+"data_issue": 43,
+"actual_failure": 27
+},
+{
+"date": "2026-04-08",
+"requested": 587,
+"successful": 516,
+"failed": 70,
+"data_issue": 1,
+"actual_failure": 0
+},
+{
+"date": "2026-04-09",
+"requested": 315,
+"successful": 314,
+"failed": 1,
+"data_issue": 20,
+"actual_failure": 20
+},
+{
+"date": "2026-04-10",
+"requested": 264,
+"successful": 224,
+"failed": 40,
+"data_issue": 1,
+"actual_failure": 4
+},
+{
+"date": "2026-04-12",
+"requested": 5,
+"successful": 0,
+"failed": 5,
+"data_issue": 1,
+"actual_failure": 4
+},
+{
+"date": "2026-04-13",
+"requested": 926,
+"successful": 769,
+"failed": 132,
+"data_issue": 81,
+"actual_failure": 51
+},
+{
+"date": "2026-04-14",
+"requested": 246,
+"successful": 192,
+"failed": 37,
+"data_issue": 7,
+"actual_failure": 30
+},
+{
+"date": "2026-04-15",
+"requested": 207,
+"successful": 162,
+"failed": 34,
+"data_issue": 17,
+"actual_failure": 17
+},
+{
+"date": "2026-04-16",
+"requested": 868,
+"successful": 674,
+"failed": 193,
+"data_issue": 132,
+"actual_failure": 61
+},
+{
+"date": "2026-04-17",
+"requested": 151,
+"successful": 121,
+"failed": 30,
+"data_issue": 18,
+"actual_failure": 12
+},
+{
+"date": "2026-04-20",
+"requested": 43,
+"successful": 32,
+"failed": 7,
+"data_issue": 2,
+"actual_failure": 5
+},
+{
+"date": "2026-04-21",
+"requested": 44,
+"successful": 33,
+"failed": 8,
+"data_issue": 4,
+"actual_failure": 4
+},
+{
+"date": "2026-04-22",
+"requested": 404,
+"successful": 338,
+"failed": 17,
+"data_issue": 4,
+"actual_failure": 13
+},
+{
+"date": "2026-04-23",
+"requested": 295,
+"successful": 191,
+"failed": 102,
+"data_issue": 88,
+"actual_failure": 14
+},
+{
+"date": "2026-04-24",
+"requested": 381,
+"successful": 327,
+"failed": 54,
+"data_issue": 13,
+"actual_failure": 41
+},
+{
+"date": "2026-04-25",
+"requested": 1,
+"successful": 1,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-04-27",
+"requested": 204,
+"successful": 175,
+"failed": 12,
+"data_issue": 4,
+"actual_failure": 8
+},
+{
+"date": "2026-04-28",
+"requested": 226,
+"successful": 177,
+"failed": 31,
+"data_issue": 22,
+"actual_failure": 9
+},
+{
+"date": "2026-04-29",
+"requested": 160,
+"successful": 120,
+"failed": 35,
+"data_issue": 19,
+"actual_failure": 16
+},
+{
+"date": "2026-04-30",
+"requested": 58,
+"successful": 42,
+"failed": 16,
+"data_issue": 9,
+"actual_failure": 7
+},
+{
+"date": "2026-05-01",
+"requested": 20,
+"successful": 19,
+"failed": 1,
+"data_issue": 1,
+"actual_failure": 0
+},
+{
+"date": "2026-05-04",
+"requested": 275,
+"successful": 234,
+"failed": 30,
+"data_issue": 26,
+"actual_failure": 4
+},
+{
+"date": "2026-05-05",
+"requested": 122,
+"successful": 112,
+"failed": 10,
+"data_issue": 6,
+"actual_failure": 4
+},
+{
+"date": "2026-05-06",
+"requested": 83,
+"successful": 66,
+"failed": 8,
+"data_issue": 7,
+"actual_failure": 1
+},
+{
+"date": "2026-05-07",
+"requested": 185,
+"successful": 178,
+"failed": 6,
+"data_issue": 4,
+"actual_failure": 2
+},
+{
+"date": "2026-05-08",
+"requested": 209,
+"successful": 195,
+"failed": 14,
+"data_issue": 5,
+"actual_failure": 9
+},
+{
+"date": "2026-05-11",
+"requested": 298,
+"successful": 263,
+"failed": 16,
+"data_issue": 11,
+"actual_failure": 5
+},
+{
+"date": "2026-05-12",
+"requested": 150,
+"successful": 139,
+"failed": 9,
+"data_issue": 6,
+"actual_failure": 3
+},
+{
+"date": "2026-05-13",
+"requested": 99,
+"successful": 78,
+"failed": 11,
+"data_issue": 6,
+"actual_failure": 5
+},
+{
+"date": "2026-05-14",
+"requested": 44,
+"successful": 41,
+"failed": 2,
+"data_issue": 2,
+"actual_failure": 0
+},
+{
+"date": "2026-05-15",
+"requested": 34,
+"successful": 27,
+"failed": 7,
+"data_issue": 7,
+"actual_failure": 0
+},
+{
+"date": "2026-05-17",
+"requested": 28,
+"successful": 28,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-05-18",
+"requested": 35,
+"successful": 29,
+"failed": 5,
+"data_issue": 3,
+"actual_failure": 2
+},
+{
+"date": "2026-05-19",
+"requested": 45,
+"successful": 40,
+"failed": 3,
+"data_issue": 3,
+"actual_failure": 0
+},
+{
+"date": "2026-05-20",
+"requested": 244,
+"successful": 228,
+"failed": 7,
+"data_issue": 7,
+"actual_failure": 0
+},
+{
+"date": "2026-05-21",
+"requested": 286,
+"successful": 255,
+"failed": 12,
+"data_issue": 12,
+"actual_failure": 0
+},
+{
+"date": "2026-05-22",
+"requested": 41,
+"successful": 27,
+"failed": 14,
+"data_issue": 6,
+"actual_failure": 8
+},
+{
+"date": "2026-05-23",
+"requested": 17,
+"successful": 10,
+"failed": 7,
+"data_issue": 1,
+"actual_failure": 6
+},
+{
+"date": "2026-05-25",
+"requested": 40,
+"successful": 32,
+"failed": 8,
+"data_issue": 8,
+"actual_failure": 0
+},
+{
+"date": "2026-05-26",
+"requested": 60,
+"successful": 56,
+"failed": 2,
+"data_issue": 2,
+"actual_failure": 0
+},
+{
+"date": "2026-05-27",
+"requested": 108,
+"successful": 100,
+"failed": 4,
+"data_issue": 1,
+"actual_failure": 3
+},
+{
+"date": "2026-05-28",
+"requested": 68,
+"successful": 61,
+"failed": 5,
+"data_issue": 2,
+"actual_failure": 3
+},
+{
+"date": "2026-05-29",
+"requested": 170,
+"successful": 153,
+"failed": 17,
+"data_issue": 3,
+"actual_failure": 14
+},
+{
+"date": "2026-05-30",
+"requested": 2,
+"successful": 2,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-06-01",
+"requested": 178,
+"successful": 174,
+"failed": 3,
+"data_issue": 3,
+"actual_failure": 0
+},
+{
+"date": "2026-06-02",
+"requested": 60,
+"successful": 53,
+"failed": 7,
+"data_issue": 2,
+"actual_failure": 5
+},
+{
+"date": "2026-06-03",
+"requested": 249,
+"successful": 229,
+"failed": 20,
+"data_issue": 16,
+"actual_failure": 4
+},
+{
+"date": "2026-06-04",
+"requested": 106,
+"successful": 95,
+"failed": 10,
+"data_issue": 3,
+"actual_failure": 7
+},
+{
+"date": "2026-06-05",
+"requested": 41,
+"successful": 39,
+"failed": 2,
+"data_issue": 0,
+"actual_failure": 2
+},
+{
+"date": "2026-06-08",
+"requested": 211,
+"successful": 198,
+"failed": 11,
+"data_issue": 6,
+"actual_failure": 5
+},
+{
+"date": "2026-06-09",
+"requested": 223,
+"successful": 211,
+"failed": 1,
+"data_issue": 0,
+"actual_failure": 1
+},
+{
+"date": "2026-06-10",
+"requested": 70,
+"successful": 56,
+"failed": 13,
+"data_issue": 9,
+"actual_failure": 4
+},
+{
+"date": "2026-06-11",
+"requested": 72,
+"successful": 66,
+"failed": 5,
+"data_issue": 4,
+"actual_failure": 1
+},
+{
+"date": "2026-06-12",
+"requested": 26,
+"successful": 24,
+"failed": 2,
+"data_issue": 1,
+"actual_failure": 1
+},
+{
+"date": "2026-06-13",
+"requested": 1,
+"successful": 1,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-06-15",
+"requested": 64,
+"successful": 56,
+"failed": 7,
+"data_issue": 3,
+"actual_failure": 4
+},
+{
+"date": "2026-06-16",
+"requested": 41,
+"successful": 32,
+"failed": 4,
+"data_issue": 2,
+"actual_failure": 2
+},
+{
+"date": "2026-06-17",
+"requested": 31,
+"successful": 30,
+"failed": 1,
+"data_issue": 0,
+"actual_failure": 1
+},
+{
+"date": "2026-06-18",
+"requested": 41,
+"successful": 35,
+"failed": 5,
+"data_issue": 2,
+"actual_failure": 3
+},
+{
+"date": "2026-06-19",
+"requested": 37,
+"successful": 32,
+"failed": 5,
+"data_issue": 2,
+"actual_failure": 3
+},
+{
+"date": "2026-06-22",
+"requested": 36,
+"successful": 34,
+"failed": 1,
+"data_issue": 1,
+"actual_failure": 0
+},
+{
+"date": "2026-06-23",
+"requested": 45,
+"successful": 40,
+"failed": 5,
+"data_issue": 2,
+"actual_failure": 3
+},
+{
+"date": "2026-06-24",
+"requested": 19,
+"successful": 18,
+"failed": 1,
+"data_issue": 0,
+"actual_failure": 1
+},
+{
+"date": "2026-06-25",
+"requested": 16,
+"successful": 11,
+"failed": 5,
+"data_issue": 5,
+"actual_failure": 0
+},
+{
+"date": "2026-06-26",
+"requested": 61,
+"successful": 59,
+"failed": 2,
+"data_issue": 2,
+"actual_failure": 0
+},
+{
+"date": "2026-06-29",
+"requested": 53,
+"successful": 49,
+"failed": 3,
+"data_issue": 1,
+"actual_failure": 2
+},
+{
+"date": "2026-06-30",
+"requested": 147,
+"successful": 135,
+"failed": 4,
+"data_issue": 2,
+"actual_failure": 2
+},
+{
+"date": "2026-07-01",
+"requested": 49,
+"successful": 42,
+"failed": 3,
+"data_issue": 1,
+"actual_failure": 2
+},
+{
+"date": "2026-07-02",
+"requested": 33,
+"successful": 27,
+"failed": 6,
+"data_issue": 3,
+"actual_failure": 3
+},
+{
+"date": "2026-07-03",
+"requested": 4,
+"successful": 3,
+"failed": 1,
+"data_issue": 1,
+"actual_failure": 0
+},
+{
+"date": "2026-07-06",
+"requested": 184,
+"successful": 172,
+"failed": 9,
+"data_issue": 2,
+"actual_failure": 7
+},
+{
+"date": "2026-07-07",
+"requested": 188,
+"successful": 165,
+"failed": 9,
+"data_issue": 4,
+"actual_failure": 5
+},
+{
+"date": "2026-07-08",
+"requested": 75,
+"successful": 64,
+"failed": 4,
+"data_issue": 1,
+"actual_failure": 3
+},
+{
+"date": "2026-07-09",
+"requested": 281,
+"successful": 264,
+"failed": 7,
+"data_issue": 3,
+"actual_failure": 4
+},
+{
+"date": "2026-07-10",
+"requested": 117,
+"successful": 102,
+"failed": 15,
+"data_issue": 8,
+"actual_failure": 7
+},
+{
+"date": "2026-07-13",
+"requested": 288,
+"successful": 275,
+"failed": 12,
+"data_issue": 5,
+"actual_failure": 7
+},
+{
+"date": "2026-07-14",
+"requested": 20,
+"successful": 15,
+"failed": 3,
+"data_issue": 0,
+"actual_failure": 3
+},
+{
+"date": "2026-07-15",
+"requested": 119,
+"successful": 87,
+"failed": 10,
+"data_issue": 8,
+"actual_failure": 2
+},
+{
+"date": "2026-07-16",
+"requested": 57,
+"successful": 37,
+"failed": 7,
+"data_issue": 3,
+"actual_failure": 4
+},
+{
+"date": "2026-07-17",
+"requested": 381,
+"successful": 352,
+"failed": 29,
+"data_issue": 4,
+"actual_failure": 25
+},
+{
+"date": "2026-07-20",
+"requested": 76,
+"successful": 62,
+"failed": 9,
+"data_issue": 7,
+"actual_failure": 2
+},
+{
+"date": "2026-07-21",
+"requested": 120,
+"successful": 112,
+"failed": 6,
+"data_issue": 4,
+"actual_failure": 2
+},
+{
+"date": "2026-07-22",
+"requested": 88,
+"successful": 63,
+"failed": 23,
+"data_issue": 6,
+"actual_failure": 17
+},
+{
+"date": "2026-07-23",
+"requested": 39,
+"successful": 33,
+"failed": 6,
+"data_issue": 1,
+"actual_failure": 5
+},
+{
+"date": "2026-07-24",
+"requested": 146,
+"successful": 130,
+"failed": 16,
+"data_issue": 8,
+"actual_failure": 8
+},
+{
+"date": "2026-07-27",
+"requested": 50,
+"successful": 41,
+"failed": 6,
+"data_issue": 4,
+"actual_failure": 2
+},
+{
+"date": "2026-07-28",
+"requested": 54,
+"successful": 42,
+"failed": 10,
+"data_issue": 4,
+"actual_failure": 6
+},
+{
+"date": "2026-07-29",
+"requested": 46,
+"successful": 38,
+"failed": 8,
+"data_issue": 1,
+"actual_failure": 7
+},
+{
+"date": "2026-07-30",
+"requested": 96,
+"successful": 86,
+"failed": 10,
+"data_issue": 3,
+"actual_failure": 7
+},
+{
+"date": "2026-07-31",
+"requested": 45,
+"successful": 41,
+"failed": 4,
+"data_issue": 1,
+"actual_failure": 3
+},
+{
+"date": "2026-08-03",
+"requested": 132,
+"successful": 109,
+"failed": 12,
+"data_issue": 5,
+"actual_failure": 7
+},
+{
+"date": "2026-08-04",
+"requested": 111,
+"successful": 99,
+"failed": 7,
+"data_issue": 4,
+"actual_failure": 3
+},
+{
+"date": "2026-08-05",
+"requested": 108,
+"successful": 80,
+"failed": 16,
+"data_issue": 3,
+"actual_failure": 13
+},
+{
+"date": "2026-08-06",
+"requested": 86,
+"successful": 69,
+"failed": 11,
+"data_issue": 8,
+"actual_failure": 3
+},
+{
+"date": "2026-08-07",
+"requested": 203,
+"successful": 187,
+"failed": 16,
+"data_issue": 7,
+"actual_failure": 9
+},
+{
+"date": "2026-08-08",
+"requested": 1,
+"successful": 1,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-08-10",
+"requested": 213,
+"successful": 183,
+"failed": 18,
+"data_issue": 10,
+"actual_failure": 8
+},
+{
+"date": "2026-08-11",
+"requested": 281,
+"successful": 254,
+"failed": 25,
+"data_issue": 3,
+"actual_failure": 22
+},
+{
+"date": "2026-08-12",
+"requested": 93,
+"successful": 85,
+"failed": 6,
+"data_issue": 2,
+"actual_failure": 4
+},
+{
+"date": "2026-08-13",
+"requested": 101,
+"successful": 82,
+"failed": 18,
+"data_issue": 16,
+"actual_failure": 2
+},
+{
+"date": "2026-08-14",
+"requested": 128,
+"successful": 102,
+"failed": 26,
+"data_issue": 11,
+"actual_failure": 15
+},
+{
+"date": "2026-08-15",
+"requested": 2,
+"successful": 2,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-08-17",
+"requested": 13,
+"successful": 11,
+"failed": 2,
+"data_issue": 1,
+"actual_failure": 1
+},
+{
+"date": "2026-08-18",
+"requested": 34,
+"successful": 19,
+"failed": 5,
+"data_issue": 2,
+"actual_failure": 3
+},
+{
+"date": "2026-08-19",
+"requested": 104,
+"successful": 75,
+"failed": 28,
+"data_issue": 23,
+"actual_failure": 5
+},
+{
+"date": "2026-08-20",
+"requested": 52,
+"successful": 41,
+"failed": 9,
+"data_issue": 5,
+"actual_failure": 4
+},
+{
+"date": "2026-08-21",
+"requested": 19,
+"successful": 15,
+"failed": 4,
+"data_issue": 2,
+"actual_failure": 2
+},
+{
+"date": "2026-08-24",
+"requested": 65,
+"successful": 44,
+"failed": 11,
+"data_issue": 7,
+"actual_failure": 4
+},
+{
+"date": "2026-08-25",
+"requested": 23,
+"successful": 21,
+"failed": 1,
+"data_issue": 0,
+"actual_failure": 1
+},
+{
+"date": "2026-08-26",
+"requested": 30,
+"successful": 17,
+"failed": 12,
+"data_issue": 8,
+"actual_failure": 4
+},
+{
+"date": "2026-08-27",
+"requested": 43,
+"successful": 34,
+"failed": 9,
+"data_issue": 7,
+"actual_failure": 2
+},
+{
+"date": "2026-08-28",
+"requested": 72,
+"successful": 66,
+"failed": 6,
+"data_issue": 5,
+"actual_failure": 1
+},
+{
+"date": "2026-08-31",
+"requested": 38,
+"successful": 28,
+"failed": 6,
+"data_issue": 5,
+"actual_failure": 1
+},
+{
+"date": "2026-09-01",
+"requested": 729,
+"successful": 716,
+"failed": 12,
+"data_issue": 8,
+"actual_failure": 4
+},
+{
+"date": "2026-09-02",
+"requested": 22,
+"successful": 16,
+"failed": 6,
+"data_issue": 5,
+"actual_failure": 1
+},
+{
+"date": "2026-09-03",
+"requested": 43,
+"successful": 33,
+"failed": 10,
+"data_issue": 8,
+"actual_failure": 2
+},
+{
+"date": "2026-09-04",
+"requested": 135,
+"successful": 120,
+"failed": 15,
+"data_issue": 14,
+"actual_failure": 1
+},
+{
+"date": "2026-09-05",
+"requested": 1,
+"successful": 1,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-09-06",
+"requested": 1,
+"successful": 1,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-09-08",
+"requested": 34,
+"successful": 28,
+"failed": 6,
+"data_issue": 4,
+"actual_failure": 2
+},
+{
+"date": "2026-09-09",
+"requested": 352,
+"successful": 341,
+"failed": 11,
+"data_issue": 10,
+"actual_failure": 1
+},
+{
+"date": "2026-09-10",
+"requested": 206,
+"successful": 198,
+"failed": 8,
+"data_issue": 6,
+"actual_failure": 2
+},
+{
+"date": "2026-09-11",
+"requested": 261,
+"successful": 228,
+"failed": 33,
+"data_issue": 14,
+"actual_failure": 19
+},
+{
+"date": "2026-09-14",
+"requested": 112,
+"successful": 67,
+"failed": 22,
+"data_issue": 20,
+"actual_failure": 2
+},
+{
+"date": "2026-09-15",
+"requested": 31,
+"successful": 13,
+"failed": 9,
+"data_issue": 6,
+"actual_failure": 3
+},
+{
+"date": "2026-09-16",
+"requested": 32,
+"successful": 12,
+"failed": 4,
+"data_issue": 4,
+"actual_failure": 0
+},
+{
+"date": "2026-09-17",
+"requested": 67,
+"successful": 14,
+"failed": 51,
+"data_issue": 17,
+"actual_failure": 34
+},
+{
+"date": "2026-09-18",
+"requested": 48,
+"successful": 44,
+"failed": 4,
+"data_issue": 3,
+"actual_failure": 1
+},
+{
+"date": "2026-09-21",
+"requested": 62,
+"successful": 51,
+"failed": 5,
+"data_issue": 5,
+"actual_failure": 0
+},
+{
+"date": "2026-09-22",
+"requested": 44,
+"successful": 38,
+"failed": 2,
+"data_issue": 1,
+"actual_failure": 1
+},
+{
+"date": "2026-09-23",
+"requested": 14,
+"successful": 14,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-09-24",
+"requested": 22,
+"successful": 18,
+"failed": 3,
+"data_issue": 2,
+"actual_failure": 1
+},
+{
+"date": "2026-09-25",
+"requested": 18,
+"successful": 16,
+"failed": 2,
+"data_issue": 2,
+"actual_failure": 0
+},
+{
+"date": "2026-09-27",
+"requested": 1,
+"successful": 1,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-09-28",
+"requested": 48,
+"successful": 46,
+"failed": 2,
+"data_issue": 2,
+"actual_failure": 0
+},
+{
+"date": "2026-09-29",
+"requested": 22,
+"successful": 18,
+"failed": 3,
+"data_issue": 2,
+"actual_failure": 1
+},
+{
+"date": "2026-09-30",
+"requested": 17,
+"successful": 15,
+"failed": 2,
+"data_issue": 2,
+"actual_failure": 0
+},
+{
+"date": "2026-10-01",
+"requested": 22,
+"successful": 19,
+"failed": 3,
+"data_issue": 3,
+"actual_failure": 0
+},
+{
+"date": "2026-10-02",
+"requested": 20,
+"successful": 19,
+"failed": 1,
+"data_issue": 1,
+"actual_failure": 0
+},
+{
+"date": "2026-10-03",
+"requested": 3,
+"successful": 3,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-10-05",
+"requested": 12,
+"successful": 11,
+"failed": 1,
+"data_issue": 0,
+"actual_failure": 1
+},
+{
+"date": "2026-10-06",
+"requested": 16,
+"successful": 14,
+"failed": 1,
+"data_issue": 0,
+"actual_failure": 1
+},
+{
+"date": "2026-10-07",
+"requested": 200,
+"successful": 142,
+"failed": 8,
+"data_issue": 2,
+"actual_failure": 6
+},
+{
+"date": "2026-10-08",
+"requested": 174,
+"successful": 150,
+"failed": 20,
+"data_issue": 7,
+"actual_failure": 13
+},
+{
+"date": "2026-10-09",
+"requested": 57,
+"successful": 34,
+"failed": 23,
+"data_issue": 3,
+"actual_failure": 10
+},
+{
+"date": "2026-10-10",
+"requested": 7,
+"successful": 6,
+"failed": 1,
+"data_issue": 1,
+"actual_failure": 0
+},
+{
+"date": "2026-10-12",
+"requested": 28,
+"successful": 26,
+"failed": 2,
+"data_issue": 2,
+"actual_failure": 0
+},
+{
+"date": "2026-10-13",
+"requested": 107,
+"successful": 95,
+"failed": 12,
+"data_issue": 5,
+"actual_failure": 7
+},
+{
+"date": "2026-10-14",
+"requested": 69,
+"successful": 60,
+"failed": 7,
+"data_issue": 2,
+"actual_failure": 5
+},
+{
+"date": "2026-10-15",
+"requested": 22,
+"successful": 8,
+"failed": 13,
+"data_issue": 10,
+"actual_failure": 3
+},
+{
+"date": "2026-10-16",
+"requested": 33,
+"successful": 20,
+"failed": 13,
+"data_issue": 11,
+"actual_failure": 2
+},
+{
+"date": "2026-10-19",
+"requested": 20,
+"successful": 15,
+"failed": 5,
+"data_issue": 3,
+"actual_failure": 2
+},
+{
+"date": "2026-10-20",
+"requested": 14,
+"successful": 6,
+"failed": 8,
+"data_issue": 8,
+"actual_failure": 0
+},
+{
+"date": "2026-10-21",
+"requested": 4,
+"successful": 4,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
+},
+{
+"date": "2026-10-22",
+"requested": 114,
+"successful": 95,
+"failed": 19,
+"data_issue": 4,
+"actual_failure": 15
+},
+{
+"date": "2026-10-23",
+"requested": 21,
+"successful": 19,
+"failed": 2,
+"data_issue": 1,
+"actual_failure": 1
+}
+]
