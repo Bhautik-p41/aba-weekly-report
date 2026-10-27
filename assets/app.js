@@ -92,6 +92,7 @@
           requested: req, attempted: n(w.attempted), successful: n(w.successful), failed: n(w.failed),
           data_issue: n(w.data_issue), actual_failure: n(w.actual_failure), active_days: n(w.active_days),
           success_rate: req ? n(w.successful) / req : 0,
+          data_issue_rate: req ? Math.min(1, n(w.data_issue) / req) : 0,
           handled: handled,
           overall_success: req ? Math.min(1, handled / req) : 0,
         };
@@ -328,7 +329,7 @@
       countTo(el, metric, v, metric === 'success_rate' || metric === 'overall_success' ? fmtPct : fmtInt, animate);
     }
     const ov = $('#kpi-overall-sub');
-    if (ov) { if (k) { ov.innerHTML = `<span data-source="week_kpis" data-field="handled" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.handled))}</span> of <span data-source="week_kpis" data-field="requested" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.requested))}</span> handled correctly`; } else ov.textContent = ''; }
+    if (ov) { if (k) { const dr = k.requested ? Math.min(1, k.data_issue / k.requested) : 0; ov.innerHTML = `<span data-source="week_kpis" data-field="handled" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.handled))}</span> of <span data-source="week_kpis" data-field="requested" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.requested))}</span> handled correctly<br><span class="formula">= success rate <span data-source="week_kpis" data-field="success_rate" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(k.success_rate))}</span> + data issues <span data-source="week_kpis" data-field="data_issue_rate" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(dr))}</span></span>`; } else ov.textContent = ''; }
     for (const box of $$('#kpis .spark')) {
       const metric = box.dataset.spark;
       const rows = metric === 'success_rate' ? K : W;
