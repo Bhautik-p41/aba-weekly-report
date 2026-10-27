@@ -169,12 +169,13 @@
   </header>
 
   <section class="kpis" id="kpis" data-fetchpriority="high">
-    <div class="kpi reveal" style="--kc: var(--p-navy)"><div class="lbl">Requested</div><div class="val" data-source="week_kpis" data-field="requested" data-metric="requested">—</div><div class="delta" data-source="week_kpis" data-field="delta_requested" data-delta="delta_requested" data-good="neutral">—</div></div>
-    <div class="kpi reveal" style="--kc: var(--p-cerulean)"><div class="lbl">Bot attempts</div><div class="val" data-source="week_kpis" data-field="attempted" data-metric="attempted">—</div><div class="delta" data-source="week_kpis" data-field="delta_attempted" data-delta="delta_attempted" data-good="neutral">—</div></div>
-    <div class="kpi reveal" style="--kc: var(--p-blue)"><div class="lbl">Successful</div><div class="val" data-source="week_kpis" data-field="successful" data-metric="successful">—</div><div class="delta" data-source="week_kpis" data-field="delta_successful" data-delta="delta_successful" data-good="up">—</div></div>
-    <div class="kpi reveal" style="--kc: var(--p-mint)"><div class="lbl">Success rate</div><div class="val" data-source="week_kpis" data-field="success_rate" data-metric="success_rate">—</div><div class="delta" data-source="week_kpis" data-field="delta_success_rate" data-delta="delta_success_rate" data-good="up">—</div></div>
-    <div class="kpi reveal" style="--kc: var(--p-amber)"><div class="lbl">Data issues</div><div class="val" data-source="week_kpis" data-field="data_issue" data-metric="data_issue">—</div><div class="delta" data-source="week_kpis" data-field="delta_data_issue" data-delta="delta_data_issue" data-good="down">—</div></div>
-    <div class="kpi reveal" style="--kc: var(--p-ruby)"><div class="lbl">Actual bot failures</div><div class="val" data-source="week_kpis" data-field="actual_failure" data-metric="actual_failure">—</div><div class="delta" data-source="week_kpis" data-field="delta_actual_failure" data-delta="delta_actual_failure" data-good="down">—</div></div>
+    <div class="kpi reveal" style="--kc: var(--p-navy)"><div class="lbl">Requested</div><div class="val" data-source="week_kpis" data-field="requested" data-metric="requested">—</div><div class="cap">filings this week</div></div>
+    <div class="kpi reveal" style="--kc: var(--p-cerulean)"><div class="lbl">Bot attempts</div><div class="val" data-source="week_kpis" data-field="attempted" data-metric="attempted">—</div><div class="cap">runs, incl. retries</div></div>
+    <div class="kpi reveal" style="--kc: var(--p-blue)"><div class="lbl">Successful</div><div class="val" data-source="week_kpis" data-field="successful" data-metric="successful">—</div><div class="cap">filings completed</div></div>
+    <div class="kpi reveal" style="--kc: var(--p-mint)"><div class="lbl">Success rate</div><div class="val" data-source="week_kpis" data-field="success_rate" data-metric="success_rate">—</div><div class="cap">successful ÷ requested</div></div>
+    <div class="kpi reveal" style="--kc: var(--p-amber)"><div class="lbl">Data issues</div><div class="val" data-source="week_kpis" data-field="data_issue" data-metric="data_issue">—</div><div class="cap">input or external, not the bot</div></div>
+    <div class="kpi reveal" style="--kc: var(--p-gray)"><div class="lbl">Actual bot failures</div><div class="val" data-source="week_kpis" data-field="actual_failure" data-metric="actual_failure">—</div><div class="cap">bot or website issue</div></div>
+    <div class="kpi reveal good" style="--kc: var(--p-green)"><div class="lbl">Overall success</div><div class="val" data-source="week_kpis" data-field="overall_success" data-metric="overall_success">—</div><div class="cap" id="kpi-overall-sub"></div></div>
   </section>
 
   <section class="hl" id="highlights" aria-label="Highlights"></section>
@@ -190,7 +191,7 @@
       </div>
       <div class="card reveal" id="outcome-card">
         <h3>Outcome</h3>
-        <p class="note">From the Weekly report tab: completed filings and the two kinds of failure.</p>
+        <p class="note">Completed filings, data issues (input or external) and actual bot failures. Overall success counts the first two.</p>
         <div class="donut-wrap">
           <div class="chart dash-skeleton" id="donut-chart" data-source="weeks"></div>
           <div class="donut-legend" id="donut-legend"></div>
@@ -242,7 +243,7 @@
   </section>
 
   <section class="sec" id="failures">
-    <div class="sec-title"><h2>Where it went wrong</h2><span>Which services struggled, and what the bot logs said</span></div>
+    <div class="sec-title"><h2>Service performance</h2><span>Success rate per service, and the reasons behind the week’s failed runs</span></div>
     <div class="grid two">
       <div class="card reveal" id="svc-card">
         <h3>Success rate by service</h3>
@@ -250,8 +251,8 @@
         <div class="hbars" id="svc-bars" data-source="service_rates"></div>
       </div>
       <div class="card reveal" id="reason-card">
-        <h3>Top failure reasons from the bot log</h3>
-        <p class="note">Failed bot runs this week, grouped by the failure message the bot recorded.</p>
+        <h3>Failed runs — reasons from the bot log</h3>
+        <p class="note">Includes data issues the bot stopped on; grouped by the message the bot recorded.</p>
         <div class="hbars" id="reason-bars" data-source="reasons_by_week"></div>
       </div>
     </div>
@@ -261,7 +262,7 @@
     <div class="sec-title"><h2>Trend</h2><span id="trend-sub">Last 12 weeks</span></div>
     <div class="card reveal">
       <h3>Filings per week and success rate</h3>
-      <p class="note">Stacked bars are the weekly outcomes; the line is the success rate. The selected week is outlined.</p>
+      <p class="note">Stacked bars are the weekly outcomes; the green line is overall success, the dashed line the success rate. The selected week is outlined.</p>
       <div class="chart dash-skeleton" id="trend-chart" data-source="week_kpis"></div>
       <div class="legend" id="trend-legend"></div>
     </div>
@@ -290,6 +291,7 @@
       <div><b>Failed</b> — filings the bot did not complete, reviewed each week and split into <b>data issues</b> (the input data or access was the problem) and <b>actual bot failures</b> (the website or the bot was the problem).</div>
       <div><b>Daily figures</b> count each day’s activity, so a filing retried on two days appears on both days and daily bars can add up to more than the week’s total.</div>
       <div><b>Success rate</b> — successful ÷ requested.</div>
+      <div><b>Overall success</b> — (successful + data issues) ÷ requested: the share of filings the bot completed or correctly stopped because of an input problem.</div>
     </div>
   </section>
 

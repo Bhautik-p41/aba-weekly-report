@@ -79,24 +79,21 @@
   // ---------- calculations readers can inspect ----------
   dash.calc('week_kpis', {
     inputs: ['weeks'],
-    title: 'Weekly KPIs and change',
-    description: 'Success rate = successful ÷ requested; each change compares a week with the week before it in the list.',
+    title: 'Weekly KPIs',
+    description: 'Success rate = successful ÷ requested. Overall success = (successful + data issues) ÷ requested: filings the bot completed or correctly stopped because of an input problem; capped at 100%.',
     fn: (weeks) => {
       const n = (v) => Number(v) || 0;
       const rows = [...weeks].sort((a, b) => (a.week_start < b.week_start ? -1 : 1));
-      return rows.map((w, i) => {
-        const p = rows[i - 1];
-        const rate = n(w.requested) ? n(w.successful) / n(w.requested) : 0;
-        const prate = p && n(p.requested) ? n(p.successful) / n(p.requested) : null;
-        const d = (k) => (p ? n(w[k]) - n(p[k]) : null);
+      return rows.map((w) => {
+        const req = n(w.requested);
+        const handled = n(w.successful) + n(w.data_issue);
         return {
           week_start: w.week_start, week_end: w.week_end, label: w.label,
-          requested: n(w.requested), attempted: n(w.attempted), successful: n(w.successful), failed: n(w.failed),
+          requested: req, attempted: n(w.attempted), successful: n(w.successful), failed: n(w.failed),
           data_issue: n(w.data_issue), actual_failure: n(w.actual_failure), active_days: n(w.active_days),
-          success_rate: rate, prev_label: p ? p.label : '',
-          delta_requested: d('requested'), delta_attempted: d('attempted'), delta_successful: d('successful'),
-          delta_failed: d('failed'), delta_data_issue: d('data_issue'), delta_actual_failure: d('actual_failure'),
-          delta_success_rate: prate === null ? null : rate - prate,
+          success_rate: req ? n(w.successful) / req : 0,
+          handled: handled,
+          overall_success: req ? Math.min(1, handled / req) : 0,
         };
       });
     },
@@ -328,18 +325,10 @@
       el.classList.remove('dash-skeleton');
       setWhere(el, 'week_start', k.week_start);
       const v = k[metric];
-      countTo(el, metric, v, metric === 'success_rate' ? fmtPct : fmtInt, animate);
+      countTo(el, metric, v, metric === 'success_rate' || metric === 'overall_success' ? fmtPct : fmtInt, animate);
     }
-    for (const el of $$('#kpis .delta')) {
-      const field = el.dataset.delta;
-      el.classList.remove('good', 'bad');
-      if (!k || k[field] === null || k[field] === undefined) { el.textContent = ''; el.removeAttribute('data-where'); continue; }
-      setWhere(el, 'week_start', k.week_start);
-      const v = k[field];
-      el.textContent = (field === 'delta_success_rate' ? fmtPts(v) : fmtSigned(v)) + ' vs last week';
-      const good = el.dataset.good;
-      if (v !== 0 && good !== 'neutral') el.classList.add((good === 'up') === (v > 0) ? 'good' : 'bad');
-    }
+    const ov = $('#kpi-overall-sub');
+    if (ov) { if (k) { ov.innerHTML = `<span data-source="week_kpis" data-field="handled" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.handled))}</span> of <span data-source="week_kpis" data-field="requested" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.requested))}</span> handled correctly`; } else ov.textContent = ''; }
     for (const box of $$('#kpis .spark')) {
       const metric = box.dataset.spark;
       const rows = metric === 'success_rate' ? K : W;
@@ -367,23 +356,25 @@
     const items = [];
     const w = (src, field, whereK, whereV, text, cls) => `<span class="${cls || ''}" data-source="${src}" data-field="${field}" data-where="${whereK}=${enc(whereV)}">${esc(text)}</span>`;
     const link = (r, status) => `<a class="rl" href="${esc(recordsUrl({ ...weekP(k), state: r.state, service: r.service, status: status || 'all' }))}" target="_blank" rel="noopener" title="${TITLE_RECORDS}">${esc(r.state)} · ${esc(r.service)}</a>`;
+    const wk = (field, text) => w('week_kpis', field, 'week_start', k.week_start, text);
+    items.push({ c: 'var(--p-green)', html: `<b>Overall success ${wk('overall_success', fmtPct(k.overall_success))}</b>: the bots completed ${wk('successful', fmtInt(k.successful))} filings and correctly flagged ${wk('data_issue', fmtInt(k.data_issue))} with data issues, out of ${wk('requested', fmtInt(k.requested))} requested.` });
     const top = bd.slice().sort((a, b) => n0(b.requested) - n0(a.requested))[0];
     if (top) {
       const rt = rates.get(top.key);
-      items.push({ c: 'var(--p-blue)', html: `<b>${link(top)}</b> led the week: ${w('weekly_breakdown', 'requested', 'key', top.key, fmtInt(top.requested))} requested${rt ? ` (${w('breakdown_rates', 'share', 'key', top.key, fmtPct0(rt.share))} of all filings)` : ''}, ${w('weekly_breakdown', 'successful', 'key', top.key, fmtInt(top.successful))} completed.` });
+      items.push({ c: 'var(--p-blue)', html: `<b>${link(top)}</b> led the week: ${w('weekly_breakdown', 'requested', 'key', top.key, fmtInt(top.requested))} requested${rt ? ` (${w('breakdown_rates', 'share', 'key', top.key, fmtPct0(rt.share))} of all filings)` : ''}, ${w('weekly_breakdown', 'successful', 'key', top.key, fmtInt(top.successful))} completed${rt ? ` (${w('breakdown_rates', 'success_rate', 'key', top.key, fmtPct0(rt.success_rate))})` : ''}.` });
+    }
+    const busy = dailyRows.slice().sort((a, b) => n0(b.requested) - n0(a.requested))[0];
+    if (busy) items.push({ c: 'var(--p-navy)', html: `Busiest day: <b><a class="rl" href="${esc(recordsUrl({ day: String(busy.date).slice(0, 10) }))}" target="_blank" rel="noopener" title="${TITLE_RECORDS}">${esc(fmtDay(parseDay(busy.date)))}</a></b> with ${w('daily', 'requested', 'date', busy.date, fmtInt(busy.requested))} requested, over ${wk('active_days', fmtInt(k.active_days))} active days.` });
+    const di = bd.slice().sort((a, b) => n0(b.data_issue) - n0(a.data_issue))[0];
+    if (di && n0(di.data_issue) > 0) {
+      items.push({ c: 'var(--p-amber)', html: `Data issues (input or external, not the bot): mostly <b>${link(di, 'failed')}</b> — ${w('weekly_breakdown', 'data_issue', 'key', di.key, fmtInt(di.data_issue))}.${di.note_data_issue ? ' ' + w('weekly_breakdown', 'note_data_issue', 'key', di.key, di.note_data_issue, 'q') : ''}` });
     }
     const act = bd.slice().sort((a, b) => n0(b.actual_failure) - n0(a.actual_failure))[0];
     if (act && n0(act.actual_failure) > 0) {
-      items.push({ c: 'var(--p-ruby)', html: `Most actual bot failures: <b>${link(act, 'failed')}</b> — ${w('weekly_breakdown', 'actual_failure', 'key', act.key, fmtInt(act.actual_failure))}.${act.note_actual ? ' ' + w('weekly_breakdown', 'note_actual', 'key', act.key, act.note_actual, 'q') : ''}` });
+      items.push({ c: 'var(--p-gray)', html: `Bot attention: <b>${link(act, 'failed')}</b> — ${w('weekly_breakdown', 'actual_failure', 'key', act.key, fmtInt(act.actual_failure))}.${act.note_actual ? ' ' + w('weekly_breakdown', 'note_actual', 'key', act.key, act.note_actual, 'q') : ''}` });
     } else if (k.actual_failure === 0) {
-      items.push({ c: 'var(--p-green)', html: 'No actual bot failures this week.' });
+      items.push({ c: 'var(--p-green)', html: 'No bot failures this week.' });
     }
-    const di = bd.slice().sort((a, b) => n0(b.data_issue) - n0(a.data_issue))[0];
-    if (di && n0(di.data_issue) > 0) {
-      items.push({ c: 'var(--p-amber)', html: `Most data issues: <b>${link(di, 'failed')}</b> — ${w('weekly_breakdown', 'data_issue', 'key', di.key, fmtInt(di.data_issue))}.${di.note_data_issue ? ' ' + w('weekly_breakdown', 'note_data_issue', 'key', di.key, di.note_data_issue, 'q') : ''}` });
-    }
-    const busy = dailyRows.slice().sort((a, b) => n0(b.requested) - n0(a.requested))[0];
-    if (busy) items.push({ c: 'var(--p-navy)', html: `Busiest day: <b><a class="rl" href="${esc(recordsUrl({ day: String(busy.date).slice(0, 10) }))}" target="_blank" rel="noopener" title="${TITLE_RECORDS}">${esc(fmtDay(parseDay(busy.date)))}</a></b> with ${w('daily', 'requested', 'date', busy.date, fmtInt(busy.requested))} requested, over ${w('week_kpis', 'active_days', 'week_start', k.week_start, fmtInt(k.active_days))} active days.` });
     for (const it of items) {
       const div = document.createElement('div'); div.className = 'item reveal'; div.style.setProperty('--hc', it.c);
       div.innerHTML = `<span class="dot"></span><span>${it.html}</span>`;
@@ -460,9 +451,10 @@
     if (animate && DUR) paths.transition().duration(DUR).ease(d3.easeCubicOut).attrTween('d', (d) => { const i = d3.interpolate({ startAngle: 0, endAngle: 0 }, d); return (t) => arc(i(t)); });
     else paths.attr('d', arc);
     const center = document.createElement('div'); center.className = 'donut-center'; center.style.height = box.clientHeight ? box.clientHeight + 'px' : W + 'px';
-    center.innerHTML = `<div class="big" data-source="week_kpis" data-field="success_rate" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(k.success_rate))}</div><div class="small">success rate</div>`;
+    center.innerHTML = `<div class="big good" data-source="week_kpis" data-field="overall_success" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(k.overall_success))}</div><div class="small">overall success</div>`;
     box.appendChild(center);
-    legend.innerHTML = KEYS.map((kk) => `<span><i class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:${colorOf[kk]()};margin-right:6px;vertical-align:-1px"></i>${NAMES[kk]}</span><span class="n" data-source="weeks" data-field="${kk}" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(n0(k[kk])))}</span><span class="p">${total ? esc(fmtPct(Math.max(0, n0(k[kk])) / total)) : ''}</span>`).join('');
+    legend.innerHTML = KEYS.map((kk) => `<span><i class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:${colorOf[kk]()};margin-right:6px;vertical-align:-1px"></i>${NAMES[kk]}${kk === 'data_issue' ? ' <span class="muted">(not the bot)</span>' : ''}</span><span class="n" data-source="weeks" data-field="${kk}" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(n0(k[kk])))}</span><span class="p">${total ? esc(fmtPct(Math.max(0, n0(k[kk])) / total)) : ''}</span>`).join('')
+      + `<span class="tot"><i class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:${css('--p-green')};margin-right:6px;vertical-align:-1px"></i>Handled correctly (successful + data issues)</span><span class="n tot" data-source="week_kpis" data-field="handled" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.handled))}</span><span class="p tot good" data-source="week_kpis" data-field="overall_success" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(k.overall_success))}</span>`;
   }
 
   function renderBreakdownTable() {
@@ -480,9 +472,9 @@
       const tr = document.createElement('tr'); tr.dataset.key = r.key; tr.style.cursor = 'pointer'; tr.title = TITLE_RECORDS;
       const num = (v, cls) => { const td = document.createElement('td'); td.className = 'n' + (cls ? ' ' + cls : '') + (n0(v) === 0 ? ' zero' : ''); td.textContent = fmtInt(n0(v)); return td; };
       const txt = (v, cls) => { const td = document.createElement('td'); td.className = cls || ''; td.textContent = v ?? ''; return td; };
-      tr.append(txt(r.state, 'state'), txt(r.service, 'svc'), num(r.requested), num(r.attempted, 'narrow-hide'), num(r.successful), num(r.failed, n0(r.failed) ? 'bad' : ''), num(r.data_issue, n0(r.data_issue) ? 'warn' : ''), num(r.actual_failure, n0(r.actual_failure) ? 'bad' : ''));
+      tr.append(txt(r.state, 'state'), txt(r.service, 'svc'), num(r.requested), num(r.attempted, 'narrow-hide'), num(r.successful, 'ok'), num(r.failed), num(r.data_issue), num(r.actual_failure));
       const rate = document.createElement('td'); rate.className = 'rate';
-      rate.innerHTML = `<div class="ratebar"><div class="bar"><i></i></div><span>${esc(fmtPct(r.success_rate))}</span></div>`;
+      rate.innerHTML = `<div class="ratebar ${r.success_rate >= 0.8 ? 'hi' : ''}"><div class="bar"><i></i></div><span>${esc(fmtPct(r.success_rate))}</span></div>`;
       tr.appendChild(rate);
       tr.appendChild(txt(r.notes, 'notes'));
       frag.appendChild(tr);
@@ -493,7 +485,7 @@
     if (!tfoot) { tfoot = document.createElement('tfoot'); $('#bd-table').appendChild(tfoot); }
     if (k && !state.search) {
       const m = (f, v) => `<td class="n" data-source="weeks" data-field="${f}" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(n0(v)))}</td>`;
-      tfoot.innerHTML = `<tr class="total"><td>Total</td><td class="svc">All services</td>${m('requested', k.requested)}<td class="n narrow-hide" data-source="weeks" data-field="attempted" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.attempted))}</td>${m('successful', k.successful)}${m('failed', k.failed)}${m('data_issue', k.data_issue)}${m('actual_failure', k.actual_failure)}<td class="rate"><div class="ratebar"><div class="bar"><i style="width:${(k.success_rate * 100).toFixed(1)}%"></i></div><span data-source="week_kpis" data-field="success_rate" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(k.success_rate))}</span></div></td><td></td></tr>`;
+      tfoot.innerHTML = `<tr class="total"><td>Total</td><td class="svc">All services</td>${m('requested', k.requested)}<td class="n narrow-hide" data-source="weeks" data-field="attempted" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.attempted))}</td>${m('successful', k.successful)}${m('failed', k.failed)}${m('data_issue', k.data_issue)}${m('actual_failure', k.actual_failure)}<td class="rate"><div class="ratebar ${k.success_rate >= 0.8 ? 'hi' : ''}"><div class="bar"><i style="width:${(k.success_rate * 100).toFixed(1)}%"></i></div><span data-source="week_kpis" data-field="success_rate" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(k.success_rate))}</span></div></td><td></td></tr>`;
     } else tfoot.replaceChildren();
     cnt.textContent = `${rows.length} of ${bd.length} lines` + (state.search ? ' match' : '');
   }
@@ -557,18 +549,21 @@
       }
       if (r.week_start === week) g.append('rect').attr('x', x(r.week_start) - 3).attr('y', y(acc) - 3).attr('width', bw + 6).attr('height', y(0) - y(acc) + 6).attr('fill', 'none').style('stroke', 'var(--p-navy)').attr('stroke-width', 1.5).attr('stroke-dasharray', '3 3').attr('rx', 5);
       g.append('rect').attr('x', x(r.week_start)).attr('y', 14).attr('width', bw).attr('height', H - 54).attr('fill', 'transparent').style('cursor', 'pointer')
-        .on('mousemove', (evt) => tipc.show(evt, `<div class="t">${esc(r.label)}</div>${tipRow(null, 'Requested', fmtInt(r.requested))}${KEYS.map((kk) => tipRow(colorOf[kk](), NAMES[kk], fmtInt(r[kk]))).join('')}${tipRow(css('--p-cerulean'), 'Success rate', fmtPct(r.success_rate))}`))
+        .on('mousemove', (evt) => tipc.show(evt, `<div class="t">${esc(r.label)}</div>${tipRow(null, 'Requested', fmtInt(r.requested))}${KEYS.map((kk) => tipRow(colorOf[kk](), NAMES[kk], fmtInt(r[kk]))).join('')}${tipRow(css('--p-green'), 'Overall success', fmtPct(r.overall_success))}${tipRow(css('--p-cerulean'), 'Success rate', fmtPct(r.success_rate))}`))
         .on('mouseleave', () => tipc.hide())
         .on('click', () => dash.setParams({ week: r.week_start, day: null }));
     }
-    const lineCol = css('--p-cerulean');
-    const line = d3.line().x((r) => x(r.week_start) + bw / 2).y((r) => y2(r.success_rate));
-    const path = svg.append('path').attr('d', line(win)).attr('fill', 'none').style('stroke', lineCol).attr('stroke-width', 2.5).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round');
+    const lineCol = css('--p-cerulean'), okCol = css('--p-green');
+    const rateLine = d3.line().x((r) => x(r.week_start) + bw / 2).y((r) => y2(r.success_rate));
+    const okLine = d3.line().x((r) => x(r.week_start) + bw / 2).y((r) => y2(r.overall_success));
+    svg.append('path').attr('d', rateLine(win)).attr('fill', 'none').style('stroke', lineCol).attr('stroke-width', 2).attr('stroke-dasharray', '5 4').attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round').attr('opacity', .9);
+    const path = svg.append('path').attr('d', okLine(win)).attr('fill', 'none').style('stroke', okCol).attr('stroke-width', 2.5).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round');
     if (animate && DUR) { const L = path.node().getTotalLength(); path.attr('stroke-dasharray', L).attr('stroke-dashoffset', L).transition().duration(DUR).ease(d3.easeCubicOut).attr('stroke-dashoffset', 0).on('end', () => path.attr('stroke-dasharray', null)); }
-    svg.selectAll('circle.pt').data(win).join('circle').attr('class', 'pt').attr('cx', (r) => x(r.week_start) + bw / 2).attr('cy', (r) => y2(r.success_rate)).attr('r', (r) => (r.week_start === week ? 4.5 : 3)).style('fill', lineCol).style('stroke', 'var(--color-panel)').attr('stroke-width', 1.5);
+    svg.selectAll('circle.pt').data(win).join('circle').attr('class', 'pt').attr('cx', (r) => x(r.week_start) + bw / 2).attr('cy', (r) => y2(r.overall_success)).attr('r', (r) => (r.week_start === week ? 4.5 : 3)).style('fill', okCol).style('stroke', 'var(--color-panel)').attr('stroke-width', 1.5);
     const last = win[win.length - 1];
-    svg.append('text').attr('x', x(last.week_start) + bw / 2 + 8).attr('y', y2(last.success_rate) - 8).attr('font-size', 11).attr('font-weight', 700).style('fill', lineCol).attr('text-anchor', x(last.week_start) > W - mr - 60 ? 'end' : 'start').text(fmtPct(last.success_rate));
-    legend.innerHTML = KEYS.map((kk) => `<span><i style="background:${colorOf[kk]()}"></i>${NAMES[kk]}</span>`).join('') + `<span><i style="background:${lineCol};border-radius:50%"></i>Success rate (right axis)</span><span style="margin-left:auto">Click a week to open it</span>`;
+    const anchor = x(last.week_start) > W - mr - 60 ? 'end' : 'start';
+    svg.append('text').attr('x', x(last.week_start) + bw / 2 + 8).attr('y', y2(last.overall_success) - 8).attr('font-size', 11).attr('font-weight', 700).style('fill', okCol).attr('text-anchor', anchor).text(fmtPct(last.overall_success));
+    legend.innerHTML = KEYS.map((kk) => `<span><i style="background:${colorOf[kk]()}"></i>${NAMES[kk]}</span>`).join('') + `<span><i style="background:${okCol};border-radius:50%"></i>Overall success (right axis)</span><span><i style="background:${lineCol};border-radius:50%"></i>Success rate</span><span style="margin-left:auto">Click a week to open it</span>`;
   }
 
   function renderHeat(dailyD, W, week) {
@@ -623,7 +618,7 @@
       const tr = document.createElement('tr'); tr.dataset.key = r.key; tr.style.cursor = 'pointer'; tr.title = TITLE_RECORDS;
       const num = (v, cls) => { const td = document.createElement('td'); td.className = 'n' + (cls ? ' ' + cls : '') + (n0(v) === 0 ? ' zero' : ''); td.textContent = fmtInt(n0(v)); return td; };
       const txt = (v, cls) => { const td = document.createElement('td'); td.className = cls || ''; td.textContent = v ?? ''; return td; };
-      tr.append(txt(r.state, 'state'), txt(r.service, 'svc'), num(r.requested), num(r.attempted, 'narrow-hide'), num(r.successful), num(r.failed, n0(r.failed) ? 'bad' : ''), num(r.data_issue, n0(r.data_issue) ? 'warn' : ''), num(r.actual_failure, n0(r.actual_failure) ? 'bad' : ''), txt(r.notes, 'notes'));
+      tr.append(txt(r.state, 'state'), txt(r.service, 'svc'), num(r.requested), num(r.attempted, 'narrow-hide'), num(r.successful, 'ok'), num(r.failed), num(r.data_issue), num(r.actual_failure), txt(r.notes, 'notes'));
       frag.appendChild(tr);
     }
     tbody.replaceChildren(frag);
@@ -675,10 +670,10 @@
     renderHighlights(k, bd, rates, dailyRows);
     renderBreakdownTable();
     renderHBars($('#svc-bars'), svcD.status === 'ok' && week ? svcD.data.filter((r) => r.week_start === week).sort((a, b) => n0(b.requested) - n0(a.requested)).slice(0, 10) : null,
-      { source: 'service_rates', field: 'success_rate', value: (r) => n0(r.success_rate), scale: 'rate', name: (r) => r.service, label: (r) => fmtPct(n0(r.success_rate)), sub: (r) => `${fmtInt(r.successful)} of ${fmtInt(r.requested)} completed · ${fmtInt(r.failed)} failed`, color: (r) => (n0(r.success_rate) >= 0.9 ? css('--p-blue') : n0(r.success_rate) >= 0.6 ? css('--p-amber') : css('--p-ruby')), empty: 'No services this week.',
+      { source: 'service_rates', field: 'success_rate', value: (r) => n0(r.success_rate), scale: 'rate', name: (r) => r.service, label: (r) => fmtPct(n0(r.success_rate)), sub: (r) => `${fmtInt(r.successful)} of ${fmtInt(r.requested)} completed · ${fmtInt(r.failed)} failed`, color: (r) => (n0(r.success_rate) >= 0.8 ? css('--p-green') : n0(r.success_rate) >= 0.5 ? css('--p-blue') : css('--p-amber')), empty: 'No services this week.',
         onClick: (r) => openRecords({ ...weekP(k), service: r.service }) });
     renderHBars($('#reason-bars'), reasD.status === 'ok' && week ? reasD.data.filter((r) => r.week_start === week).sort((a, b) => n0(b.count) - n0(a.count)).slice(0, 8) : null,
-      { source: 'reasons_by_week', field: 'count', value: (r) => n0(r.count), scale: 'max', name: (r) => r.reason, label: (r) => fmtInt(r.count), sub: (r) => r.services, color: () => css('--p-ruby'), empty: 'No failed bot runs recorded this week.',
+      { source: 'reasons_by_week', field: 'count', value: (r) => n0(r.count), scale: 'max', name: (r) => r.reason, label: (r) => fmtInt(r.count), sub: (r) => r.services, color: () => css('--p-navy'), empty: 'No failed bot runs recorded this week.',
         onClick: (r) => { const needle = String(r.reason).replace(/…$/, '').split(' - Please')[0].slice(0, 70); openRecords({ ...weekP(k), status: 'failed', reason: /^(Unspecified|No failure)/.test(needle) ? '' : needle }); } });
     renderTrend(K, week, animate);
     renderHeat(dailyD, W, week);
