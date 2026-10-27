@@ -100,9 +100,9 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 .p41 .good { color: var(--p-green); }
 
 /* ---------- highlights ---------- */
-.p41 .hl { display: grid; gap: 10px 32px; grid-template-columns: 1fr; margin: 26px 0 0; padding: 0 4px; }
-@media (min-width: 900px) { .p41 .hl { grid-template-columns: 1fr 1fr; } }
-.p41 .hl .item { display: flex; gap: 12px; align-items: flex-start; font-size: 0.92rem; color: var(--color-fg-muted); min-width: 0; line-height: 1.5; }
+.p41 .hl { margin: 26px 0 0; padding: 0 4px; }
+@media (min-width: 900px) { .p41 .hl { column-count: 2; column-gap: 32px; } }
+.p41 .hl .item { display: flex; gap: 12px; align-items: flex-start; font-size: 0.92rem; color: var(--color-fg-muted); min-width: 0; line-height: 1.5; break-inside: avoid; margin-bottom: 10px; }
 .p41 .hl .item .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--hc, var(--p-blue)); margin-top: .5em; flex: none; }
 .p41 .hl .item b { color: var(--color-fg); font-weight: 700; }
 .p41 .hl .item span[data-source] { color: var(--color-fg); font-weight: 600; }
