@@ -100,6 +100,9 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 .p41 .kpi.good .cap .formula { display: inline-block; margin-top: 4px; color: var(--p-green); font-weight: 600; font-size: 0.72rem; line-height: 1.3; }
 .p41 .kpi.good .cap .formula span { color: var(--p-green); font-weight: 700; }
 .p41 .good { color: var(--p-green); }
+.p41 .kpi .tag { display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; padding: 1px 7px; border-radius: 999px; margin: 0 4px 2px 0; vertical-align: 1px; }
+.p41 .kpi .tag-red { color: var(--p-ruby); background: color-mix(in srgb, var(--p-ruby) 14%, transparent); }
+.p41 .kpi .tag-amber { color: var(--p-amber); background: color-mix(in srgb, var(--p-amber) 16%, transparent); }
 
 /* ---------- highlights ---------- */
 .p41 .hl { margin: 26px 0 0; padding: 0 4px; }

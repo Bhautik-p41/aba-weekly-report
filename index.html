@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/fonts.css?v=33737d2f">
-<link rel="stylesheet" href="assets/site.css?v=ea559eb0">
+<link rel="stylesheet" href="assets/site.css?v=b56dbf13">
 <script>(function(){try{var t=localStorage.getItem('aba-theme');if(t!=='light'&&t!=='dark')t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
@@ -173,8 +173,8 @@
     <div class="kpi reveal" style="--kc: var(--p-cerulean)"><div class="lbl">Bot attempts</div><div class="val" data-source="week_kpis" data-field="attempted" data-metric="attempted">—</div><div class="cap">runs, incl. retries</div></div>
     <div class="kpi reveal" style="--kc: var(--p-blue)"><div class="lbl">Successful</div><div class="val" data-source="week_kpis" data-field="successful" data-metric="successful">—</div><div class="cap">filings completed</div></div>
     <div class="kpi reveal" style="--kc: var(--p-mint)"><div class="lbl">Success rate</div><div class="val" data-source="week_kpis" data-field="success_rate" data-metric="success_rate">—</div><div class="cap">successful ÷ requested</div></div>
-    <div class="kpi reveal" style="--kc: var(--p-amber)"><div class="lbl">Data issues</div><div class="val" data-source="week_kpis" data-field="data_issue" data-metric="data_issue">—</div><div class="cap">input or external, not the bot</div></div>
-    <div class="kpi reveal" style="--kc: var(--p-gray)"><div class="lbl">Actual bot failures</div><div class="val" data-source="week_kpis" data-field="actual_failure" data-metric="actual_failure">—</div><div class="cap">bot or website issue</div></div>
+    <div class="kpi reveal" style="--kc: var(--p-ruby)"><div class="lbl">Data issues</div><div class="val" data-source="week_kpis" data-field="data_issue" data-metric="data_issue">—</div><div class="cap"><span class="tag tag-red">Not the bot</span> input or external data</div></div>
+    <div class="kpi reveal" style="--kc: var(--p-amber)"><div class="lbl">Actual bot failures</div><div class="val" data-source="week_kpis" data-field="actual_failure" data-metric="actual_failure">—</div><div class="cap"><span class="tag tag-amber">Bot or website</span> failure</div></div>
     <div class="kpi reveal good" style="--kc: var(--p-green)"><div class="lbl">Overall success</div><div class="val" data-source="week_kpis" data-field="overall_success" data-metric="overall_success">—</div><div class="cap" id="kpi-overall-sub"></div></div>
   </section>
 
