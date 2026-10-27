@@ -205,7 +205,7 @@
       </div>
       <div class="card reveal" id="outcome-card">
         <h3>Outcome</h3>
-        <p class="note">Completed filings, data issues (input or external) and actual bot failures. Overall success counts the first two.</p>
+        <p class="note">Completed filings, data issues (input or external) and actual bot failures. Overall success excludes data issues from the base.</p>
         <div class="donut-wrap">
           <div class="chart dash-skeleton" id="donut-chart" data-source="weeks"></div>
           <div class="donut-legend" id="donut-legend"></div>
@@ -305,7 +305,7 @@
       <div><b>Failed</b> — filings the bot did not complete, reviewed each week and split into <b>data issues</b> (the input data or access was the problem) and <b>actual bot failures</b> (the website or the bot was the problem).</div>
       <div><b>Daily figures</b> count each day’s activity, so a filing retried on two days appears on both days and daily bars can add up to more than the week’s total.</div>
       <div><b>Success rate</b> — successful ÷ requested.</div>
-      <div><b>Overall success</b> — (successful + data issues) ÷ requested: the share of filings the bot completed or correctly stopped because of an input problem.</div>
+      <div><b>Overall success</b> — successful ÷ (requested − data issues): the success rate on the filings the bot could actually complete, since data issues are input problems rather than bot problems.</div>
     </div>
   </section>
 
@@ -315,6 +315,6 @@
 </main>
 <script src="assets/d3.min.js?v=f2094bbf"></script>
 <script src="assets/site.js?v=da735b81"></script>
-<script src="assets/app.js?v=83f0c19e"></script>
+<script src="assets/app.js?v=73e6d11b"></script>
 </body>
 </html>

@@ -80,21 +80,21 @@
   dash.calc('week_kpis', {
     inputs: ['weeks'],
     title: 'Weekly KPIs',
-    description: 'Success rate = successful ÷ requested. Overall success = (successful + data issues) ÷ requested: filings the bot completed or correctly stopped because of an input problem; capped at 100%.',
+    description: 'Success rate = successful ÷ requested. Overall success = successful ÷ (requested − data issues): the success rate on filings the bot could actually complete, since data issues are input problems; capped at 100%.',
     fn: (weeks) => {
       const n = (v) => Number(v) || 0;
       const rows = [...weeks].sort((a, b) => (a.week_start < b.week_start ? -1 : 1));
       return rows.map((w) => {
         const req = n(w.requested);
-        const handled = n(w.successful) + n(w.data_issue);
+        const eligible = Math.max(0, req - n(w.data_issue));
         return {
           week_start: w.week_start, week_end: w.week_end, label: w.label,
           requested: req, attempted: n(w.attempted), successful: n(w.successful), failed: n(w.failed),
           data_issue: n(w.data_issue), actual_failure: n(w.actual_failure), active_days: n(w.active_days),
           success_rate: req ? n(w.successful) / req : 0,
           data_issue_rate: req ? Math.min(1, n(w.data_issue) / req) : 0,
-          handled: handled,
-          overall_success: req ? Math.min(1, handled / req) : 0,
+          eligible: eligible,
+          overall_success: eligible ? Math.min(1, n(w.successful) / eligible) : 0,
         };
       });
     },
@@ -329,7 +329,7 @@
       countTo(el, metric, v, metric === 'success_rate' || metric === 'overall_success' ? fmtPct : fmtInt, animate);
     }
     const ov = $('#kpi-overall-sub');
-    if (ov) { if (k) { const dr = k.requested ? Math.min(1, k.data_issue / k.requested) : 0; ov.innerHTML = `<span data-source="week_kpis" data-field="handled" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.handled))}</span> of <span data-source="week_kpis" data-field="requested" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.requested))}</span> handled correctly<br><span class="formula">= success rate <span data-source="week_kpis" data-field="success_rate" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(k.success_rate))}</span> + data issues <span data-source="week_kpis" data-field="data_issue_rate" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(dr))}</span></span>`; } else ov.textContent = ''; }
+    if (ov) { if (k) { ov.innerHTML = `<span data-source="week_kpis" data-field="successful" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.successful))}</span> of <span data-source="week_kpis" data-field="eligible" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.eligible))}</span> eligible filings<br><span class="formula">= successful ÷ (requested <span data-source="week_kpis" data-field="requested" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.requested))}</span> − data issues <span data-source="week_kpis" data-field="data_issue" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.data_issue))}</span>)</span>`; } else ov.textContent = ''; }
     for (const box of $$('#kpis .spark')) {
       const metric = box.dataset.spark;
       const rows = metric === 'success_rate' ? K : W;
@@ -358,7 +358,7 @@
     const w = (src, field, whereK, whereV, text, cls) => `<span class="${cls || ''}" data-source="${src}" data-field="${field}" data-where="${whereK}=${enc(whereV)}">${esc(text)}</span>`;
     const link = (r, status) => `<a class="rl" href="${esc(recordsUrl({ ...weekP(k), state: r.state, service: r.service, status: status || 'all' }))}" target="_blank" rel="noopener" title="${TITLE_RECORDS}">${esc(r.state)} · ${esc(r.service)}</a>`;
     const wk = (field, text) => w('week_kpis', field, 'week_start', k.week_start, text);
-    items.push({ c: 'var(--p-green)', html: `<b>Overall success ${wk('overall_success', fmtPct(k.overall_success))}</b>: the bots completed ${wk('successful', fmtInt(k.successful))} filings and correctly flagged ${wk('data_issue', fmtInt(k.data_issue))} with data issues, out of ${wk('requested', fmtInt(k.requested))} requested.` });
+    items.push({ c: 'var(--p-green)', html: `<b>Overall success ${wk('overall_success', fmtPct(k.overall_success))}</b>: of ${wk('eligible', fmtInt(k.eligible))} filings the bots could complete (${wk('requested', fmtInt(k.requested))} requested minus ${wk('data_issue', fmtInt(k.data_issue))} with data issues), ${wk('successful', fmtInt(k.successful))} were completed.` });
     const top = bd.slice().sort((a, b) => n0(b.requested) - n0(a.requested))[0];
     if (top) {
       const rt = rates.get(top.key);
@@ -456,7 +456,7 @@
     box.appendChild(center);
     const LEG = { successful: 'Successful', data_issue: 'Data issues <span class="tag tag-red">Not the bot</span>', actual_failure: 'Bot failures' };
     legend.innerHTML = KEYS.map((kk) => `<span><i class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:${colorOf[kk]()};margin-right:6px;vertical-align:-1px"></i>${LEG[kk]}</span><span class="n" data-source="weeks" data-field="${kk}" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(n0(k[kk])))}</span><span class="p">${total ? esc(fmtPct(Math.max(0, n0(k[kk])) / total)) : ''}</span>`).join('')
-      + `<span class="tot" title="Successful + data issues"><i class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:${css('--p-green')};margin-right:6px;vertical-align:-1px"></i>Handled correctly</span><span class="n tot" data-source="week_kpis" data-field="handled" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.handled))}</span><span class="p tot good" data-source="week_kpis" data-field="overall_success" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(k.overall_success))}</span>`;
+      + `<span class="tot" title="Successful ÷ (requested − data issues)"><i class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:${css('--p-green')};margin-right:6px;vertical-align:-1px"></i>Overall success</span><span class="n tot"><span data-source="week_kpis" data-field="successful" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.successful))}</span> / <span data-source="week_kpis" data-field="eligible" data-where="week_start=${enc(k.week_start)}">${esc(fmtInt(k.eligible))}</span></span><span class="p tot good" data-source="week_kpis" data-field="overall_success" data-where="week_start=${enc(k.week_start)}">${esc(fmtPct(k.overall_success))}</span>`;
   }
 
   function renderBreakdownTable() {
