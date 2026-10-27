@@ -634,11 +634,31 @@
   }
 
   function renderMeta(metaD) {
-    const el = $('#meta-line span[data-source="meta"]');
-    if (metaD.status !== 'ok' || !metaD.data.length) { el.textContent = '—'; return; }
+    const el = $('#meta-line span[data-source="meta"]'), pill = $('#status-pill');
+    if (metaD.status !== 'ok' || !metaD.data.length) { el.textContent = '—'; if (pill) pill.classList.remove('live'); return; }
     const at = metaD.data[0].generated_at;
     const d = new Date(at);
     el.textContent = isNaN(d) ? String(at) : d.toLocaleString(undefined, { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+    if (pill) pill.classList.toggle('live', !isNaN(d) && Date.now() - d.getTime() < 9 * 86400000);
+  }
+  // section navigation (no hash changes: the hash carries the week/day)
+  const subnav = $('#subnav');
+  if (subnav) {
+    subnav.addEventListener('click', (e) => {
+      const b = e.target.closest('button[data-go]'); if (!b) return;
+      const el = document.getElementById(b.dataset.go); if (!el) return;
+      el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    });
+    const setOn = (id) => { for (const b of subnav.querySelectorAll('button')) b.classList.toggle('on', b.dataset.go === id); };
+    try {
+      const targets = Array.from(subnav.querySelectorAll('button')).map((b) => document.getElementById(b.dataset.go)).filter(Boolean);
+      let current = targets[0] && targets[0].id;
+      const io = new IntersectionObserver((entries) => {
+        const vis = entries.filter((en) => en.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (vis.length) { current = vis[0].target.id; setOn(current); }
+      }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+      targets.forEach((t) => io.observe(t));
+    } catch (e) { /* older browsers: the buttons still scroll */ }
   }
 
   // ---------- main ----------

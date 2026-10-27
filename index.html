@@ -8,10 +8,11 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/fonts.css?v=33737d2f">
-<link rel="stylesheet" href="assets/site.css?v=09506d02">
+<link rel="stylesheet" href="assets/site.css?v=23783844">
 <script>(function(){try{var t=localStorage.getItem('aba-theme');if(t!=='light'&&t!=='dark')t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
+<div class="brandbar" aria-hidden="true"></div>
 <main class="page">
 <div class="p41" id="top">
   <header class="hdr">
@@ -155,18 +156,31 @@
       <div class="divider"></div>
       <div>
         <h1>ABA Entity Pilot Bots <span class="accent">· Weekly Report</span></h1>
-        <p class="meta" id="meta-line">Source: Bot Weekly Report (Google Sheet) · Updated <span data-source="meta" data-field="generated_at" data-row="0">—</span></p>
-        <p class="meta hint">Click any number, bar, segment or table row to open the matching records from the sheet in a new tab (needs access to the sheet).</p>
+        <p class="meta" id="meta-line"><span class="status" id="status-pill"><i></i>Updated <span data-source="meta" data-field="generated_at" data-row="0">—</span></span> <span class="sep">·</span> Source: <a class="srclink" href="https://docs.google.com/spreadsheets/d/1MYS5uFP98sC8SKEyWMx2gqQgsGJTbV4cogqcWTJj4cY/edit?gid=726975820#gid=726975820" target="_blank" rel="noopener">Bot Weekly Report (Google Sheet) ↗</a></p>
+        <p class="meta hint">Click any number, bar, segment or table row to open its records from the sheet in a new tab (needs access to the sheet).</p>
       </div>
     </div>
-    <div class="wk" id="week-nav">
-      <button type="button" class="prev" aria-label="Previous week">◀</button>
-      <select class="wsel" aria-label="Week"></select>
-      <button type="button" class="next" aria-label="Next week">▶</button>
-      <button type="button" class="btn latest" title="Jump to the latest week">Latest</button>
+    <div class="actions">
+      <div class="wk" id="week-nav">
+        <button type="button" class="prev" aria-label="Previous week">◀</button>
+        <select class="wsel" aria-label="Week"></select>
+        <button type="button" class="next" aria-label="Next week">▶</button>
+        <button type="button" class="btn latest" title="Jump to the latest week">Latest</button>
       <button type="button" class="btn theme" id="theme-toggle" aria-label="Switch theme">☾ Dark</button>
+      </div>
+      <div class="tools">
+        <a class="btn primary" id="sheet-link" href="https://docs.google.com/spreadsheets/d/1MYS5uFP98sC8SKEyWMx2gqQgsGJTbV4cogqcWTJj4cY/edit?gid=726975820#gid=726975820" target="_blank" rel="noopener" title="Open the main Bot Weekly Report sheet — every record behind this report"><svg class="ico" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M3 1.5h7l3 3V14a.5.5 0 0 1-.5.5h-9.5A.5.5 0 0 1 2.5 14V2a.5.5 0 0 1 .5-.5zm1 1v11h8V5.2L9.8 2.5H4zm1.5 4h5v1h-5v-1zm0 2h5v1h-5v-1zm0 2h5v1h-5v-1z"/></svg>Open report sheet</a>
+      </div>
     </div>
   </header>
+  <nav class="subnav" id="subnav" aria-label="Sections">
+    <button type="button" data-go="kpis" class="on">Overview</button>
+    <button type="button" data-go="this-week">This week</button>
+    <button type="button" data-go="breakdown">By state &amp; service</button>
+    <button type="button" data-go="failures">Service performance</button>
+    <button type="button" data-go="trend">Trend</button>
+    <button type="button" data-go="pattern">Activity</button>
+  </nav>
 
   <section class="kpis" id="kpis" data-fetchpriority="high">
     <div class="kpi reveal" style="--kc: var(--p-navy)"><div class="lbl">Requested</div><div class="val" data-source="week_kpis" data-field="requested" data-metric="requested">—</div><div class="cap">filings this week</div></div>
@@ -295,12 +309,12 @@
     </div>
   </section>
 
-  <footer class="foot"><span>© <span id="yr"></span> Particle41 · Managed Engineering Capacity. Aligned to Your Mission.</span><span>ABA Entity Pilot Bots — weekly report</span></footer>
+  <footer class="foot"><span>© <span id="yr"></span> Particle41 · Managed Engineering Capacity. Aligned to Your Mission.</span><span class="flinks"><a href="https://docs.google.com/spreadsheets/d/1MYS5uFP98sC8SKEyWMx2gqQgsGJTbV4cogqcWTJj4cY/edit?gid=726975820#gid=726975820" target="_blank" rel="noopener">Report sheet ↗</a><a href="https://docs.google.com/spreadsheets/d/1T02aCJf0JIShzG0zeC3hkqhQUIIm-P7YvMM2kMzsTEc/edit" target="_blank" rel="noopener">Records sheet ↗</a></span></footer>
 </div>
 
 </main>
 <script src="assets/d3.min.js?v=f2094bbf"></script>
 <script src="assets/site.js?v=da735b81"></script>
-<script src="assets/app.js?v=33735c0e"></script>
+<script src="assets/app.js?v=71ffda61"></script>
 </body>
 </html>
