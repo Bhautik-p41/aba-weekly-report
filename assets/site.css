@@ -60,7 +60,7 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 .p41 .status i { width: 7px; height: 7px; border-radius: 50%; background: var(--p-gray); box-shadow: 0 0 0 3px color-mix(in srgb, var(--p-gray) 20%, transparent); }
 .p41 .status.live i { background: var(--p-green); box-shadow: 0 0 0 3px color-mix(in srgb, var(--p-green) 22%, transparent); }
 .p41 .srclink { color: var(--color-fg-muted); text-decoration: none; border-bottom: 1px dotted color-mix(in srgb, var(--p-blue) 55%, transparent); white-space: nowrap; }
-.p41 .meta .status { white-space: nowrap; }
+.p41 .meta .status, .p41 .meta .src { white-space: nowrap; }
 .p41 .srclink:hover { color: var(--p-blue); border-bottom-style: solid; }
 .p41 .actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px 14px; flex: 0 0 auto; margin-top: 8px; }
 .p41 .tools { display: flex; align-items: center; gap: 10px; }
