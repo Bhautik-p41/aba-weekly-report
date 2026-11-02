@@ -2086,5 +2086,53 @@
 "failed": 2,
 "data_issue": 1,
 "actual_failure": 1
+},
+{
+"date": "2026-10-26",
+"requested": 75,
+"successful": 50,
+"failed": 14,
+"data_issue": 10,
+"actual_failure": 4
+},
+{
+"date": "2026-10-27",
+"requested": 98,
+"successful": 83,
+"failed": 10,
+"data_issue": 5,
+"actual_failure": 5
+},
+{
+"date": "2026-10-28",
+"requested": 17,
+"successful": 14,
+"failed": 2,
+"data_issue": 0,
+"actual_failure": 2
+},
+{
+"date": "2026-10-29",
+"requested": 41,
+"successful": 34,
+"failed": 7,
+"data_issue": 6,
+"actual_failure": 1
+},
+{
+"date": "2026-10-30",
+"requested": 22,
+"successful": 19,
+"failed": 3,
+"data_issue": 3,
+"actual_failure": 0
+},
+{
+"date": "2026-10-31",
+"requested": 5,
+"successful": 5,
+"failed": 0,
+"data_issue": 0,
+"actual_failure": 0
 }
 ]

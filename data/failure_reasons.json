@@ -11083,14 +11083,6 @@
 "week_start": "2026-08-31",
 "state": "Wyoming",
 "service": "Annual List",
-"reason": "2026-09-02 07:30:18 AM - FAILURE - Unable to proceed: We were unable to parse the mailing address due to its format or complexity. Please\u2026",
-"count": 1,
-"key": "2026-08-31|Wyoming|Annual List|2026-09-02 07:30:18 AM - FAILURE - Unable to proceed: We were unable to parse the mailing address due to its format or complexity. Please\u2026"
-},
-{
-"week_start": "2026-08-31",
-"state": "Wyoming",
-"service": "Annual List",
 "reason": "Failed during initial payment process - Payment Page - Bot - Unable to fill first name on payment page. The form field may have changed o\u2026",
 "count": 2,
 "key": "2026-08-31|Wyoming|Annual List|Failed during initial payment process - Payment Page - Bot - Unable to fill first name on payment page. The form field may have changed o\u2026"
@@ -11110,6 +11102,14 @@
 "reason": "Failed to provide the Principal address - Principal Address Page - Bot - Unable to fill mailing address line 1. The form field may have c\u2026",
 "count": 1,
 "key": "2026-08-31|Wyoming|Annual List|Failed to provide the Principal address - Principal Address Page - Bot - Unable to fill mailing address line 1. The form field may have c\u2026"
+},
+{
+"week_start": "2026-08-31",
+"state": "Wyoming",
+"service": "Annual List",
+"reason": "Unable to proceed: We were unable to parse the mailing address due to its format or complexity. Please verify the mailing street, city, s\u2026",
+"count": 1,
+"key": "2026-08-31|Wyoming|Annual List|Unable to proceed: We were unable to parse the mailing address due to its format or complexity. Please verify the mailing street, city, s\u2026"
 },
 {
 "week_start": "2026-08-31",
@@ -11211,22 +11211,6 @@
 "week_start": "2026-09-07",
 "state": "Wyoming",
 "service": "Annual List",
-"reason": "2026-09-10 04:20:51 AM - FAILURE - Unable to proceed: We were unable to parse the business address due to its format or complexity. Pleas\u2026",
-"count": 1,
-"key": "2026-09-07|Wyoming|Annual List|2026-09-10 04:20:51 AM - FAILURE - Unable to proceed: We were unable to parse the business address due to its format or complexity. Pleas\u2026"
-},
-{
-"week_start": "2026-09-07",
-"state": "Wyoming",
-"service": "Annual List",
-"reason": "2026-09-12 03:56:46 AM - FAILURE - Unable to proceed: We were unable to parse the business address due to its format or complexity. Pleas\u2026",
-"count": 1,
-"key": "2026-09-07|Wyoming|Annual List|2026-09-12 03:56:46 AM - FAILURE - Unable to proceed: We were unable to parse the business address due to its format or complexity. Pleas\u2026"
-},
-{
-"week_start": "2026-09-07",
-"state": "Wyoming",
-"service": "Annual List",
 "reason": "Bot - Unable to generate error screenshot PDF. There may be an issue saving the PDF.",
 "count": 1,
 "key": "2026-09-07|Wyoming|Annual List|Bot - Unable to generate error screenshot PDF. There may be an issue saving the PDF."
@@ -11310,6 +11294,14 @@
 "reason": "Failed to provide the mailing address - Mailing Address Page - Bot - Unable to fill mailing address line 1. The form field may have chang\u2026",
 "count": 2,
 "key": "2026-09-07|Wyoming|Annual List|Failed to provide the mailing address - Mailing Address Page - Bot - Unable to fill mailing address line 1. The form field may have chang\u2026"
+},
+{
+"week_start": "2026-09-07",
+"state": "Wyoming",
+"service": "Annual List",
+"reason": "Unable to proceed: We were unable to parse the business address due to its format or complexity. Please verify the business street, city,\u2026",
+"count": 2,
+"key": "2026-09-07|Wyoming|Annual List|Unable to proceed: We were unable to parse the business address due to its format or complexity. Please verify the business street, city,\u2026"
 },
 {
 "week_start": "2026-09-14",
@@ -11427,22 +11419,6 @@
 "week_start": "2026-09-14",
 "state": "Wyoming",
 "service": "Annual List",
-"reason": "2026-09-17 04:07:59 AM - FAILURE - Unable to proceed: We were unable to parse the business address due to its format or complexity. Pleas\u2026",
-"count": 1,
-"key": "2026-09-14|Wyoming|Annual List|2026-09-17 04:07:59 AM - FAILURE - Unable to proceed: We were unable to parse the business address due to its format or complexity. Pleas\u2026"
-},
-{
-"week_start": "2026-09-14",
-"state": "Wyoming",
-"service": "Annual List",
-"reason": "2026-09-17 06:26:01 AM - FAILURE - Unable to proceed: We were unable to parse the business address due to its format or complexity. Pleas\u2026",
-"count": 1,
-"key": "2026-09-14|Wyoming|Annual List|2026-09-17 06:26:01 AM - FAILURE - Unable to proceed: We were unable to parse the business address due to its format or complexity. Pleas\u2026"
-},
-{
-"week_start": "2026-09-14",
-"state": "Wyoming",
-"service": "Annual List",
 "reason": "Failed during initial payment process - Payment Page - Bot - Unable to fill first name on payment page. The form field may have changed o\u2026",
 "count": 17,
 "key": "2026-09-14|Wyoming|Annual List|Failed during initial payment process - Payment Page - Bot - Unable to fill first name on payment page. The form field may have changed o\u2026"
@@ -11502,6 +11478,14 @@
 "reason": "Failed to provide the mailing address - Mailing Address Page - Bot - Unable to fill mailing address line 1. The form field may have chang\u2026",
 "count": 1,
 "key": "2026-09-14|Wyoming|Annual List|Failed to provide the mailing address - Mailing Address Page - Bot - Unable to fill mailing address line 1. The form field may have chang\u2026"
+},
+{
+"week_start": "2026-09-14",
+"state": "Wyoming",
+"service": "Annual List",
+"reason": "Unable to proceed: We were unable to parse the business address due to its format or complexity. Please verify the business street, city,\u2026",
+"count": 2,
+"key": "2026-09-14|Wyoming|Annual List|Unable to proceed: We were unable to parse the business address due to its format or complexity. Please verify the business street, city,\u2026"
 },
 {
 "week_start": "2026-09-14",
@@ -11827,14 +11811,6 @@
 "week_start": "2026-10-05",
 "state": "Wyoming",
 "service": "Annual List",
-"reason": "2026-10-08 10:52:03 AM - FAILURE - Unable to proceed: We were unable to parse the mailing address due to its format or complexity. Please\u2026",
-"count": 1,
-"key": "2026-10-05|Wyoming|Annual List|2026-10-08 10:52:03 AM - FAILURE - Unable to proceed: We were unable to parse the mailing address due to its format or complexity. Please\u2026"
-},
-{
-"week_start": "2026-10-05",
-"state": "Wyoming",
-"service": "Annual List",
 "reason": "Failed during initial payment process - Payment Page - Bot - Unable to fill first name on payment page. The form field may have changed o\u2026",
 "count": 1,
 "key": "2026-10-05|Wyoming|Annual List|Failed during initial payment process - Payment Page - Bot - Unable to fill first name on payment page. The form field may have changed o\u2026"
@@ -11870,6 +11846,14 @@
 "reason": "JWT flow errored with status code 504",
 "count": 1,
 "key": "2026-10-05|Wyoming|Annual List|JWT flow errored with status code 504"
+},
+{
+"week_start": "2026-10-05",
+"state": "Wyoming",
+"service": "Annual List",
+"reason": "Unable to proceed: We were unable to parse the mailing address due to its format or complexity. Please verify the mailing street, city, s\u2026",
+"count": 1,
+"key": "2026-10-05|Wyoming|Annual List|Unable to proceed: We were unable to parse the mailing address due to its format or complexity. Please verify the mailing street, city, s\u2026"
 },
 {
 "week_start": "2026-10-05",
@@ -12110,5 +12094,181 @@
 "reason": "Failed to get the Business Name Search Page - Bot - Cannot file an Annual Report more than 120 days in advance of the next annual report\u2026",
 "count": 2,
 "key": "2026-10-19|Wyoming|Annual List|Failed to get the Business Name Search Page - Bot - Cannot file an Annual Report more than 120 days in advance of the next annual report\u2026"
+},
+{
+"week_start": "2026-10-26",
+"state": "A_EIN",
+"service": "EIN Application - Fulfillment",
+"reason": "Failed during Member and state selection page and Client name with SSN information page",
+"count": 6,
+"key": "2026-10-26|A_EIN|EIN Application - Fulfillment|Failed during Member and state selection page and Client name with SSN information page"
+},
+{
+"week_start": "2026-10-26",
+"state": "A_EIN",
+"service": "EIN Application - Fulfillment",
+"reason": "Unspecified failure (see bot log)",
+"count": 1,
+"key": "2026-10-26|A_EIN|EIN Application - Fulfillment|Unspecified failure (see bot log)"
+},
+{
+"week_start": "2026-10-26",
+"state": "California",
+"service": "Annual List",
+"reason": "Unknown/Empty entity structure, expected Manager-managed or Member-managed",
+"count": 2,
+"key": "2026-10-26|California|Annual List|Unknown/Empty entity structure, expected Manager-managed or Member-managed"
+},
+{
+"week_start": "2026-10-26",
+"state": "California",
+"service": "Biennial List",
+"reason": "Failed in member/manager Step - please verify the business/mailing address",
+"count": 1,
+"key": "2026-10-26|California|Biennial List|Failed in member/manager Step - please verify the business/mailing address"
+},
+{
+"week_start": "2026-10-26",
+"state": "California",
+"service": "Biennial List",
+"reason": "Failed while searching the entity and redirecting to SOI page - Access Requested for this entity. Please check your email for further ins\u2026",
+"count": 1,
+"key": "2026-10-26|California|Biennial List|Failed while searching the entity and redirecting to SOI page - Access Requested for this entity. Please check your email for further ins\u2026"
+},
+{
+"week_start": "2026-10-26",
+"state": "California",
+"service": "Biennial List",
+"reason": "Invalid Business Address",
+"count": 1,
+"key": "2026-10-26|California|Biennial List|Invalid Business Address"
+},
+{
+"week_start": "2026-10-26",
+"state": "California",
+"service": "Biennial List",
+"reason": "Manager name not proper",
+"count": 1,
+"key": "2026-10-26|California|Biennial List|Manager name not proper"
+},
+{
+"week_start": "2026-10-26",
+"state": "California",
+"service": "Biennial List",
+"reason": "Unknown/Empty entity structure, expected Manager-managed or Member-managed",
+"count": 2,
+"key": "2026-10-26|California|Biennial List|Unknown/Empty entity structure, expected Manager-managed or Member-managed"
+},
+{
+"week_start": "2026-10-26",
+"state": "California",
+"service": "CA SOI Fulfillment",
+"reason": "Failed While providing the Address - Error: failed to find element matching selector \"#field-address1-IGWcIvG1\"",
+"count": 1,
+"key": "2026-10-26|California|CA SOI Fulfillment|Failed While providing the Address - Error: failed to find element matching selector \"#field-address1-IGWcIvG1\""
+},
+{
+"week_start": "2026-10-26",
+"state": "California",
+"service": "CA SOI Fulfillment",
+"reason": "Failed to login - Okta username field did not appear within 60 seconds on",
+"count": 1,
+"key": "2026-10-26|California|CA SOI Fulfillment|Failed to login - Okta username field did not appear within 60 seconds on"
+},
+{
+"week_start": "2026-10-26",
+"state": "Nevada",
+"service": "Annual List",
+"reason": "Failed Logging In - Bot - Business category is not available on the filing category page",
+"count": 1,
+"key": "2026-10-26|Nevada|Annual List|Failed Logging In - Bot - Business category is not available on the filing category page"
+},
+{
+"week_start": "2026-10-26",
+"state": "Nevada",
+"service": "Annual List",
+"reason": "Failed Processing Entity Search, Business or Officer Information - Bot - Data issue - Business address is not available in salesforce for\u2026",
+"count": 2,
+"key": "2026-10-26|Nevada|Annual List|Failed Processing Entity Search, Business or Officer Information - Bot - Data issue - Business address is not available in salesforce for\u2026"
+},
+{
+"week_start": "2026-10-26",
+"state": "Nevada",
+"service": "Annual List",
+"reason": "Failed Processing Entity Search, Business or Officer Information - Bot - Data issue - Structure is set to neither Member-managed nor Mana\u2026",
+"count": 1,
+"key": "2026-10-26|Nevada|Annual List|Failed Processing Entity Search, Business or Officer Information - Bot - Data issue - Structure is set to neither Member-managed nor Mana\u2026"
+},
+{
+"week_start": "2026-10-26",
+"state": "Nevada",
+"service": "Annual List",
+"reason": "Failed Processing Entity Search, Business or Officer Information - Bot - Officer information page is not available",
+"count": 2,
+"key": "2026-10-26|Nevada|Annual List|Failed Processing Entity Search, Business or Officer Information - Bot - Officer information page is not available"
+},
+{
+"week_start": "2026-10-26",
+"state": "New York",
+"service": "Biennial List",
+"reason": "Failed to search the entity with DOS ID and Business Name - Search Page - please verify whether we are trying to file a Biennial Statemen\u2026",
+"count": 1,
+"key": "2026-10-26|New York|Biennial List|Failed to search the entity with DOS ID and Business Name - Search Page - please verify whether we are trying to file a Biennial Statemen\u2026"
+},
+{
+"week_start": "2026-10-26",
+"state": "Texas",
+"service": "Titanium LLC Fulfillment",
+"reason": "Failed to Login - No element found for selector: input[name=\"client_id\"]",
+"count": 1,
+"key": "2026-10-26|Texas|Titanium LLC Fulfillment|Failed to Login - No element found for selector: input[name=\"client_id\"]"
+},
+{
+"week_start": "2026-10-26",
+"state": "Washington",
+"service": "Annual List",
+"reason": "Failed to login - Cloudflare verification did not complete on the Washington login page after 3 attempts",
+"count": 3,
+"key": "2026-10-26|Washington|Annual List|Failed to login - Cloudflare verification did not complete on the Washington login page after 3 attempts"
+},
+{
+"week_start": "2026-10-26",
+"state": "Washington",
+"service": "Annual List",
+"reason": "Invalid Mailing or Business address",
+"count": 3,
+"key": "2026-10-26|Washington|Annual List|Invalid Mailing or Business address"
+},
+{
+"week_start": "2026-10-26",
+"state": "Washington",
+"service": "Binder Restatement",
+"reason": "Duplicate request detected for Binder Restatement - Washington. This Osi request is already being processed on another server, so it has\u2026",
+"count": 1,
+"key": "2026-10-26|Washington|Binder Restatement|Duplicate request detected for Binder Restatement - Washington. This Osi request is already being processed on another server, so it has\u2026"
+},
+{
+"week_start": "2026-10-26",
+"state": "Washington",
+"service": "Titanium LLC Fulfillment",
+"reason": "Failed to login - Waiting for selector `#userbox > div.cart > a > i` failed: Waiting failed: 60000ms exceeded",
+"count": 2,
+"key": "2026-10-26|Washington|Titanium LLC Fulfillment|Failed to login - Waiting for selector `#userbox > div.cart > a > i` failed: Waiting failed: 60000ms exceeded"
+},
+{
+"week_start": "2026-10-26",
+"state": "Wyoming",
+"service": "Annual List",
+"reason": "Failed to get the Business Name Search Page - Bot - Cannot file an Annual Report more than 120 days in advance of the next annual report\u2026",
+"count": 1,
+"key": "2026-10-26|Wyoming|Annual List|Failed to get the Business Name Search Page - Bot - Cannot file an Annual Report more than 120 days in advance of the next annual report\u2026"
+},
+{
+"week_start": "2026-10-26",
+"state": "Wyoming",
+"service": "LLC Formation",
+"reason": "Automation Started - Bot - The Entity Name must NOT contain any of the following designations",
+"count": 1,
+"key": "2026-10-26|Wyoming|LLC Formation|Automation Started - Bot - The Entity Name must NOT contain any of the following designations"
 }
 ]

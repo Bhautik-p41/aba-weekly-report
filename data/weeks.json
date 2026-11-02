@@ -566,7 +566,7 @@
 "requested": 411,
 "attempted": 491,
 "successful": 356,
-"failed": 34,
+"failed": 28,
 "data_issue": 13,
 "actual_failure": 31,
 "active_days": 6
@@ -579,7 +579,7 @@
 "requested": 256,
 "attempted": 279,
 "successful": 209,
-"failed": 43,
+"failed": 36,
 "data_issue": 30,
 "actual_failure": 17,
 "active_days": 5
@@ -592,9 +592,22 @@
 "requested": 173,
 "attempted": 184,
 "successful": 139,
-"failed": 34,
+"failed": 21,
 "data_issue": 16,
 "actual_failure": 18,
 "active_days": 5
+},
+{
+"week_start": "2026-10-26",
+"week_end": "2026-11-01",
+"tab": "Weekly report(26 October -  01 November)",
+"label": "26 Oct \u2013 01 Nov 2026",
+"requested": 241,
+"attempted": 281,
+"successful": 205,
+"failed": 36,
+"data_issue": 24,
+"actual_failure": 12,
+"active_days": 6
 }
 ]
